@@ -1,10 +1,12 @@
 import React from "react";
 import ButtonStyle from "./styles";
 
-const Button = () => {
+const Button = ({name}) => {
   return (
     <div>
-      <ButtonStyle>Subscribe</ButtonStyle>
+      <ButtonStyle>
+        {name}
+      </ButtonStyle>
     </div>
   );
 };

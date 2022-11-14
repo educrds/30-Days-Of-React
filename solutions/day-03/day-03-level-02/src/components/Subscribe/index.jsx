@@ -11,7 +11,7 @@ const Subscribe = () => {
       <Input placeholder="First name"></Input>
       <Input placeholder="Last name"></Input>
       <Input placeholder="Email"></Input>
-      <Button>Subscribe</Button>
+      <Button name="Subscribe"></Button>
     </Container>
   );
 };
