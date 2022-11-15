@@ -64,9 +64,9 @@ const Input = ({ placeholder }) => {
 
 const Alert= ({ alert }) => {
   return 
-		<div>
-			<p>{alert}</p>
-		</div>;
+<div>
+<p>{alert}</p>
+</div>;
 };
 ```
 
