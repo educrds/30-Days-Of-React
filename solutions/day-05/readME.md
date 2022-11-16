@@ -17,7 +17,7 @@ const Input = (props){
 	)
 }
 
-// utilizando o props
+// utilizando o props 
 
 <Input placeholder="Email"/>
 ```
