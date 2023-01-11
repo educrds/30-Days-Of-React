@@ -1,6 +1,6 @@
-const Button = ({ href, content }) => {
+const Button = ({ href, content, onClick }) => {
   return (
-    <a href={href}>
+    <a onClick={onClick} href={href}>
       <button>{content}</button>
     </a>
   );

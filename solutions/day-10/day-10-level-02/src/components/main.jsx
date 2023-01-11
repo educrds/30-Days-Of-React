@@ -2,6 +2,7 @@ import Photo from './photo';
 import Title from './title';
 import Link from './link';
 import Button from './button';
+import { FaPinterestP, FaInstagram, FaBehance, FaLinkedin } from 'react-icons/fa';
 
 const Main = () => {
   return (
@@ -17,22 +18,10 @@ const Main = () => {
           <Title text={'Bob Doe'} />
           <p>I'm a Web Development</p>
           <ul className='social-icons'>
-            <Link
-              href={'...'}
-              content={<Photo href={'/src/assets/imgs/instagram.png'} />}
-            />
-            <Link
-              href={'...'}
-              content={<Photo href={'/src/assets/imgs/behance.png'} />}
-            />
-            <Link
-              href={'...'}
-              content={<Photo href={'/src/assets/imgs/pinterest.png'} />}
-            />
-            <Link
-              href={'...'}
-              content={<Photo href={'/src/assets/imgs/linkedin.png'} />}
-            />
+            <Link href={'...'} content={<FaInstagram />} />
+            <Link href={'...'} content={<FaBehance />} />
+            <Link href={'...'} content={<FaPinterestP />} />
+            <Link href={'...'} content={<FaLinkedin />} />
           </ul>
           <Button content={'Hire me'} />
         </div>

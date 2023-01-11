@@ -1,15 +1,27 @@
+/* Theme  */
+
+.light {
+  --bg-color: #f9f9ff;
+  --font-color: #353335;
+}
+.dark {
+  --bg-color: #353353;
+  --font-color: #ccc;
+}
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  background-color: #f9f9ff;
+  background-color: var(--bg-color);
   font-family: 'Roboto Mono', monospace;
-  color: #353353;
+  color: var(--font-color);
 }
 nav {
   display: flex;
-  border-bottom: 1px solid #ccc;
+}
+h1 {
+  color: var(--font-color);
 }
 ul {
   list-style: none;
@@ -21,6 +33,7 @@ ul a {
 }
 li {
   padding: 1vh 2vw;
+  color: var(--font-color);
 }
 section {
   margin: 5vh 0;
@@ -41,11 +54,9 @@ nav,
 }
 .social-icons {
   justify-content: center;
-}
-.social-icons img {
-  width: 22px;
-  margin: 1vh 0;
-  filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 3px 8px);
+  font-size: 1.5rem;
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 2vh 0;
 }
 button {
   background-color: #f54854;
@@ -61,10 +72,13 @@ button {
 }
 
 button:hover,
+.theme-button:hover,
 a:hover {
   transform: scale(1.1);
 }
-
+.about {
+  color: #353353;
+}
 .about img {
   width: 100px;
 }
