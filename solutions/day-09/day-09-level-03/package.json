@@ -1,5 +1,5 @@
 {
-  "name": "day-09-level-02",
+  "name": "day-09-level-03",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,12 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.2",
-    "sort-by": "^0.0.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
