@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f9f9ff;
+  font-family: 'Roboto Mono', monospace;
+  color: #353353;
+}
+nav {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+ul {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+}
+ul a {
+  text-decoration: none;
+}
+li {
+  padding: 1vh 2vw;
+}
+section {
+  margin: 5vh 0;
+}
+nav,
+.about {
+  padding: 2vh 5vw;
+}
+.profile-photo {
+  width: 150px;
+  border-radius: 100%;
+}
+.avatar {
+  text-align: center;
+}
+.main {
+  padding: 8vh 0;
+}
+.social-icons {
+  justify-content: center;
+}
+.social-icons img {
+  width: 22px;
+  margin: 1vh 0;
+  filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 3px 8px);
+}
+button {
+  background-color: #f54854;
+  padding: 1.5vh 2vw;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #fcfcfc;
+}
+
+button:hover,
+a:hover {
+  transform: scale(1.1);
+}
+
+.about img {
+  width: 100px;
+}
+.about section {
+  display: flex;
+}
+.info-card {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 3vh 3vw;
+  margin-left: 5vw;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+}
+.info-card {
+  display: flex;
+}
+.info-text {
+  width: 50%;
+}
+.info-text p {
+  margin-bottom: 2vh;
+  padding-right: 1.5vw;
+}
+
+/* Progress Bar */
+
+.skills {
+  width: 50%;
+}
+.progress-bar,
+.bar {
+  height: 8px;
+  border-radius: 30px;
+}
+.progress-bar {
+  width: 100%;
+  background-color: #f1f1f1;
+  margin: 1.4vh 0;
+}
+.bar {
+  background-color: #f54854;
+}
+.skills-description {
+  display: flex;
+}
+.skills-description h4:nth-child(2) {
+  margin-left: auto;
+  font-weight: 200;
+}
