@@ -11,9 +11,7 @@ const Main = () => {
         <div className='avatar'>
           <Photo
             className={'profile-photo'}
-            href={
-              'https://static.vecteezy.com/system/resources/previews/004/819/327/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg'
-            }
+            href={'/src/assets/imgs/peeps-avatar.png'}
           />
           <Title text={'Bob Doe'} />
           <p>I'm a Web Development</p>

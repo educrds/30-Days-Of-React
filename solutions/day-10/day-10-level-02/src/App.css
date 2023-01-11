@@ -5,7 +5,7 @@
   --font-color: #353335;
 }
 .dark {
-  --bg-color: #353353;
+  --bg-color: #353838;
   --font-color: #ccc;
 }
 * {
@@ -14,7 +14,7 @@
 }
 body {
   background-color: var(--bg-color);
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Poppins', sans-serif;
   color: var(--font-color);
 }
 nav {
@@ -22,6 +22,7 @@ nav {
 }
 h1 {
   color: var(--font-color);
+  font-weight: bold;
 }
 ul {
   list-style: none;
@@ -59,7 +60,6 @@ nav,
   margin: 2vh 0;
 }
 button {
-  background-color: #f54854;
   padding: 1.5vh 2vw;
   border-radius: 30px;
   font-weight: bold;
@@ -68,7 +68,7 @@ button {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
   text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  color: #fcfcfc;
+  color: #333;
 }
 
 button:hover,
@@ -118,8 +118,9 @@ a:hover {
   background-color: #f1f1f1;
   margin: 1.4vh 0;
 }
+button,
 .bar {
-  background-color: #f54854;
+  background-color: #ffd15c;
 }
 .skills-description {
   display: flex;

@@ -25,9 +25,7 @@ const About = () => {
           <div>
             <Photo
               className={'profile-photo'}
-              href={
-                'https://static.vecteezy.com/system/resources/previews/004/819/327/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg'
-              }
+              href={'/src/assets/imgs/peeps-avatar.png'}
             />
           </div>
           <div className='info-card'>
