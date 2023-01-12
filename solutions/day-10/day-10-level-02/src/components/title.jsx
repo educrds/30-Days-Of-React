@@ -1,3 +1,4 @@
 const Title = ({ text }) => <h1>{text}</h1>;
+const SmallTitle = ({ content }) => <p>{content}</p>;
 
-export default Title
+export { Title, SmallTitle };

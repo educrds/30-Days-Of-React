@@ -8,6 +8,9 @@
   --bg-color: #353838;
   --font-color: #ccc;
 }
+
+/* General */
+
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +22,7 @@ body {
 }
 nav {
   display: flex;
+  border-bottom: solid 1px var(--font-color);
 }
 h1 {
   color: var(--font-color);
@@ -39,19 +43,25 @@ li {
 section {
   margin: 5vh 0;
 }
+
 nav,
-.about {
+.about,
+.projects {
   padding: 2vh 5vw;
+}
+
+/* Main Container */
+
+.main {
+  padding: 8vh 0;
 }
 .profile-photo {
   width: 150px;
   border-radius: 100%;
+  filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 3px 8px);
 }
 .avatar {
   text-align: center;
-}
-.main {
-  padding: 8vh 0;
 }
 .social-icons {
   justify-content: center;
@@ -71,6 +81,10 @@ button {
   color: #333;
 }
 
+svg:hover {
+  color: #ffd15c;
+}
+
 button:hover,
 .theme-button:hover,
 a:hover {
@@ -78,9 +92,6 @@ a:hover {
 }
 .about {
   color: #353353;
-}
-.about img {
-  width: 100px;
 }
 .about section {
   display: flex;
@@ -128,4 +139,25 @@ button,
 .skills-description h4:nth-child(2) {
   margin-left: auto;
   font-weight: 200;
+}
+
+/* Projects */
+
+.projects {
+  display: flex;
+  justify-content: space-between;
+}
+.projects-info {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+}
+.projects-icon {
+  font-size: 2rem;
+  color: #cccccf;
+  padding-right: 1.5vw;
+}
+.projects p {
+  line-height: 10px;
+  font-size: 1.1rem;
 }

@@ -1,4 +1,4 @@
-import Title from './title';
+import { Title, SmallTitle } from './title';
 import Photo from './photo';
 import Button from './button';
 
@@ -30,25 +30,22 @@ const About = () => {
           </div>
           <div className='info-card'>
             <div className='info-text'>
-              <p>
-                I am Bob Doe, web developer from Brazil, South America. I have rich
-                experience in web site design and building and customization, also I
-                am good at WordPress.
-              </p>
+              <SmallTitle
+                content={
+                  'I am Bob Doe, web developer from Brazil, South America. I have rich experience in web site design and building and customization, also I am good at WordPress.'
+                }
+              />
+
               <Button content={'Download CV'} />
             </div>
             <div className='skills'>
-              <ProgressBar
-                content={'Development'}
-                percentage={'85%'}
-                width={'85%'}
-              />
+              <ProgressBar content={'Front-End'} percentage={'85%'} width={'85%'} />
               <ProgressBar
                 content={'UX/UI Design'}
                 percentage={'55%'}
                 width={'55%'}
               />
-              <ProgressBar content={'Designer'} percentage={'55%'} width={'35%'} />
+              <ProgressBar content={'Back-End'} percentage={'35%'} width={'35%'} />
             </div>
           </div>
         </section>

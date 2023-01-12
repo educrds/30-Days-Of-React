@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Button from './button';
-import Title from './title';
-import Link from './link';
+import { Title } from './title';
+import List from './list';
 
 const Navbar = () => {
   const [theme, setTheme] = useState('light');
@@ -17,7 +17,7 @@ const Navbar = () => {
       <nav>
         <Title text={'Bob_'} />
         <ul>
-          <Link href={'/'} content={'About'} />
+          <List href={'/'} content={'About'} />
           <Button onClick={changeTheme} content={'Change Theme'} />
         </ul>
       </nav>
