@@ -1,14 +1,15 @@
-import Photo from './photo';
+import { FaPinterestP, FaInstagram, FaBehance, FaLinkedin } from 'react-icons/fa';
 import { Title, SmallTitle } from './title';
+import Container from './container';
+import Photo from './photo';
 import List from './list';
 import Button from './button';
-import { FaPinterestP, FaInstagram, FaBehance, FaLinkedin } from 'react-icons/fa';
 
 const Main = () => {
   return (
-    <>
-      <div className='main'>
-        <div className='avatar'>
+    <section>
+      <Container className='main'>
+        <Container className='avatar'>
           <Photo
             className={'profile-photo'}
             href={'/src/assets/imgs/peeps-avatar.png'}
@@ -22,9 +23,9 @@ const Main = () => {
             <List href={'...'} content={<FaLinkedin />} />
           </ul>
           <Button content={'Hire me'} />
-        </div>
-      </div>
-    </>
+        </Container>
+      </Container>
+    </section>
   );
 };
 export default Main;

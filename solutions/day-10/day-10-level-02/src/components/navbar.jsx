@@ -18,7 +18,8 @@ const Navbar = () => {
         <Title text={'Bob_'} />
         <ul>
           <List href={'/'} content={'About'} />
-          <Button onClick={changeTheme} content={'Change Theme'} />
+          <List href={'/'} content={'Services'} />
+          <Button  className={'theme-button'} onClick={changeTheme}/>
         </ul>
       </nav>
     </>
