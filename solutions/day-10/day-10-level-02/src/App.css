@@ -39,7 +39,6 @@ li {
   color: var(--font-color);
 }
 h1 {
-  color: var(--font-color);
   font-weight: bold;
 }
 section {
@@ -120,7 +119,7 @@ a:hover {
   width: 0;
   height: 0;
   right: 100%;
-  bottom: 10em;
+  top: 50px;
   filter: drop-shadow(rgba(212, 18, 18, 0.05) 0px 1px 2px 0px);
 }
 .info-text {
@@ -158,13 +157,18 @@ button,
   font-weight: 200;
 }
 
-/* Projects */
-
 .projects,
-.services {
+.services,
+.experience {
   display: flex;
   justify-content: space-between;
 }
+.services,
+.experience {
+  gap: 2rem;
+}
+/* Projects */
+
 .projects-info {
   display: flex;
   width: fit-content;
@@ -201,6 +205,7 @@ button,
 }
 
 /* Services */
+
 .square {
   background-color: #fff;
   color: #333;
@@ -208,11 +213,37 @@ button,
   border-radius: 2rem;
   padding: 4vh 4vw;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+  position: relative;
 }
 .square > h1 {
   color: #333;
   padding: 1vh 0 0.5vh;
 }
-.services {
-  gap: 30px;
+
+/* Experience */
+
+.experience {
+  height: 500px;
+}
+.experience .square {
+  text-align: left;
+  padding: 5vh 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.exp-icon {
+  font-size: 2rem;
+  color: #ffd15c;
+  position: absolute;
+  left: 30px;
+}
+.line {
+  border-left: 2px solid #ffd15c;
+  border-radius: 2rem;
+  height: 50px;
+  position: absolute;
+  left: 45px;
+  top: 10px;
 }

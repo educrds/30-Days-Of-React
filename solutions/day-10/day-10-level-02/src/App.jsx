@@ -5,6 +5,7 @@ import About from './components/about';
 import Projects from './components/projects';
 import Container from './components/container';
 import Services from './components/services';
+import Experience from './components/experience';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <About />
       <Projects />
       <Services />
+      <Experience />
     </Container>
   );
 };
