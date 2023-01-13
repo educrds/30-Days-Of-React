@@ -2,6 +2,8 @@ import { Title, SmallTitle } from './title';
 import Photo from './photo';
 import Button from './button';
 import Container from './container';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 const ProgressBar = ({ content, percentage, width }) => {
   return (
@@ -18,13 +20,26 @@ const ProgressBar = ({ content, percentage, width }) => {
 };
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <>
-      <section>
+      <section
+        ref={ref}
+        style={{
+          transform: isInView ? 'none' : 'translateY(-200px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
+        }}
+      >
         <Title text={'About me'} />
         <Container className={'about'}>
           <Container>
-            <Photo className={'profile-photo'} href={'/src/assets/imgs/peeps-avatar.png'}/>
+            <Photo
+              className={'profile-photo'}
+              href={'/src/assets/imgs/peeps-avatar.png'}
+            />
           </Container>
           <Container className='info-card'>
             <Container className='info-text'>
@@ -38,7 +53,10 @@ const About = () => {
             </Container>
             <Container className='skills'>
               <ProgressBar content={'Front-End'} percentage={'85%'} width={'85%'} />
-              <ProgressBar content={'UX/UI Design'} percentage={'55%'} width={'55%'}
+              <ProgressBar
+                content={'UX/UI Design'}
+                percentage={'55%'}
+                width={'55%'}
               />
               <ProgressBar content={'Back-End'} percentage={'35%'} width={'35%'} />
             </Container>

@@ -21,10 +21,11 @@ body {
   background-color: var(--bg-color);
   font-family: 'Poppins', sans-serif;
   color: var(--font-color);
+  overflow-x: hidden
+
 }
 nav {
   display: flex;
-  border-bottom: solid 1px var(--font-color);
 }
 ul {
   list-style: none;
@@ -51,9 +52,7 @@ section > h1 {
 nav {
   padding: 1vh 5vw 2vh;
 }
-.theme-button {
-  padding: 1vh 1vw;
-}
+
 .theme-button::after {
   content: var(--theme-icon);
 }

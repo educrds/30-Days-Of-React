@@ -19,7 +19,8 @@ const Navbar = () => {
         <ul>
           <List href={'/'} content={'About'} />
           <List href={'/'} content={'Services'} />
-          <Button  className={'theme-button'} onClick={changeTheme}/>
+          <List href={'/'} content={'Experience'} />
+          <Button className={'theme-button'} onClick={changeTheme} />
         </ul>
       </nav>
     </>
