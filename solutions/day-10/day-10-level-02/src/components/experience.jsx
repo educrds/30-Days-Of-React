@@ -72,7 +72,7 @@ const Experience = () => {
 
 const ExpInfo = ({ month, title, description }) => {
   return (
-    <div>
+    <div className='exp-description'>
       <VscMortarBoard className='exp-icon' />
       <SmallTitle content={month} />
       <Title text={title} />

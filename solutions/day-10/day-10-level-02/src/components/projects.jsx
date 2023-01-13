@@ -7,7 +7,7 @@ import { useInView } from 'framer-motion';
 const Item = ({ number, icon, text }) => {
   return (
     <Container className='projects-info'>
-      <Container className='projects-icon'>{icon}</Container>
+      <div>{icon}</div>
       <Container>
         <Title text={number} />
         <SmallTitle content={text} />
@@ -21,7 +21,7 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section
+    <Container
       className='projects'
       ref={ref}
       style={{
@@ -34,7 +34,7 @@ const Projects = () => {
       <Item text={'Cup of coffe'} number={1100} icon={<FaCoffee />} />
       <Item text={'Lines code'} number={10.0} icon={<FaCode />} />
       <Item text={'Satisfied clients'} number={200} icon={<FaUserFriends />} />
-    </section>
+    </Container>
   );
 };
 
