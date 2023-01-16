@@ -1,22 +1,10 @@
 import Container from './container';
 import Square from './square';
 import { Title } from './title';
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
 
 const Services = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
-    <section
-      ref={ref}
-      style={{
-        transform: isInView ? 'none' : 'translateX(300px)',
-        opacity: isInView ? 1 : 0,
-        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
-      }}
-    >
+    <section>
       <Title text={'Services'} />
       <Container className={'services'}>
         <Square

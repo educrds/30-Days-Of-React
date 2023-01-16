@@ -16,6 +16,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   background-color: var(--bg-color);
@@ -163,16 +164,18 @@ button,
 /* Projects */
 
 .projects {
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  display: flex;
+  justify-content: space-between;
 }
 
 .projects-info {
   display: flex;
+  width: calc(100% / 4);
   align-items: center;
-  justify-content: center;
 }
 .projects-info svg {
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: #cccccf;
   padding-right: 1.5vw;
 }
@@ -261,7 +264,7 @@ button,
     grid-template-columns: 1fr;
   }
   .projects {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     row-gap: 25px;
   }
   .experience {
