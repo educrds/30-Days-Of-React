@@ -1,94 +1,47 @@
-import React, { useState } from 'react';
-import './App.css';
+import { useForm } from 'react-hook-form';
 
 function Form() {
-  const [formData, setFormData] = useState({
-    name: '',
-    lastName: '',
-    email: '',
-  });
-  const [errors, setErrors] = useState({});
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    console.log(name, value);
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setErrors({});
-    let hasErrors = false;
-    const fields = [
-      { name: 'name', message: 'Nome é obrigatório' },
-      { name: 'lastName', message: 'Sobrenome é obrigatório' },
-      { name: 'email', message: 'E-mail é obrigatório' },
-    ];
-    fields.forEach((field) => {
-      if (!formData[field.name]) {
-        setErrors((prevState) => ({
-          ...prevState,
-          [field.name]: field.message,
-        }));
-        hasErrors = true;
-      }
-    });
-
-    if (!hasErrors && !/^\S+@\S+\.\S+$/.test(formData.email)) {
-      setErrors((prevState) => ({
-        ...prevState,
-        email: 'E-mail inválido',
-      }));
-      hasErrors = true;
-    }
-
-    if (!hasErrors) {
-      // Enviar o formulário aqui
-      alert('Formulário enviado com sucesso!');
-    }
-  };
+  const onSubmit = (data) => alert(data);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <label htmlFor='name'>Nome:</label>
+        <label htmlFor='firstName'>Name</label>
         <input
-          type='text'
-          id='name'
-          name='name'
-          value={formData.name}
-          onChange={handleChange}
+          {...register('firstName', { required: true })}
+          aria-invalid={errors.firstName ? 'true' : 'false'}
         />
-        {errors.name && <p>{errors.name}</p>}
+        {errors.firstName?.type === 'required' && (
+          <p role='alert'>First name is required</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor='lastName'>Last name</label>
+        <input
+          {...register('lastName', { required: 'Last name is required' })}
+          aria-invalid={errors.lastName ? 'true' : 'false'}
+        />
+        {errors.lastName && <p role='alert'>{errors.lastName?.message}</p>}
       </div>
       <div>
-        <label htmlFor='lastName'>Sobrenome:</label>
+        <label htmlFor='email'>Email</label>
         <input
-          type='text'
-          id='lastName'
-          name='lastName'
-          value={formData.lastName}
-          onChange={handleChange}
+          {...register('mail', {
+            required: 'Email Address is required',
+            pattern: { value: /^\S+@\S+.\S+$/, message: 'Email address is invalid' },
+          })}
+          aria-invalid={errors.mail ? 'true' : 'false'}
         />
-        {errors.lastName && <p>{errors.lastName}</p>}
+        {errors.mail && <p role='alert'>{errors.mail?.message}</p>}
       </div>
-      <div>
-        <label htmlFor='email'>E-mail:</label>
-        <input
-          type='text'
-          id='email'
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <p>{errors.email}</p>}
-      </div>
-      <button type='submit'>Enviar</button>
+      <input type='submit' />
     </form>
   );
 }
