@@ -1,5 +1,6 @@
 ## Solution (Day 13 - Level 01)
-1.  What is a controlled input?
+
+### 1.  What is a controlled input?
 
 Em React, uma entrada controlada (controlled input) é um elemento de entrada (como um campo de texto ou caixa de seleção) cujo valor é controlado pelo estado do componente. Isso significa que o valor do elemento de entrada é definido pelo estado do componente e qualquer atualização no valor do elemento de entrada afeta o estado do componente.
 
@@ -30,7 +31,7 @@ Neste exemplo, o componente tem um estado inputValue que armazena o valor do inp
 
 Em geral é recomendado o uso de entradas controladas, pois é mais fácil de garantir a integridade dos dados e fazer validação dos campos. Entradas não controladas podem ser úteis em algumas situações específicas, mas geralmente não são recomendadas.
 
-2.  What is an uncontrolled input?
+### 2.  What is an uncontrolled input?
 
 Uma entrada não controlada (uncontrolled input) em React é um elemento de entrada (como um campo de texto ou caixa de seleção) cujo valor não é controlado pelo estado do componente. Isso significa que o valor do elemento de entrada é definido diretamente pelo valor do DOM e qualquer atualização no valor do elemento de entrada não afeta o estado do componente.
 
@@ -51,24 +52,24 @@ function UncontrolledInput() {
 ```
 Neste exemplo, o componente não tem um estado que armazena o valor do input, e o valor do input é gerenciado diretamente pelo DOM.
 
-4.  How do you get a content of a certain HTML element in React ?
+### 3.  How do you get a content of a certain HTML element in React ?
 Existem algumas formas de obter o conteúdo de um elemento HTML no React:
 
 **useRef():** o useRef pode ser usado para criar uma referência para um elemento HTML e acessá-lo diretamente para obter seu conteúdo.
 **useState():** o useState pode ser usado para armazenar o conteúdo de um elemento HTML em um estado do componente. O componente pode então renderizar o elemento HTML com o conteúdo do estado.
 **useEffect():** o useEffect pode ser usado para obter o conteúdo de um elemento HTML assim que o componente é montado.
 
-9.  Why it is not a good idea to touch the DOM directly in React ?
+### 4.  Why it is not a good idea to touch the DOM directly in React ?
 
 No React, é recomendado evitar tocar diretamente no DOM (Document Object Model) porque isso pode causar problemas de consistência de estado e rendimento. O React foi projetado para lidar com a manipulação do DOM de forma eficiente e transparente ao desenvolvedor, gerenciando a sincronização do estado do componente com a representação visual.
 
 Ao tocar diretamente no DOM, você estaria contornando o gerenciamento de estado do React e causaria problemas de consistência de estado, o que pode resultar em erros e comportamentos inesperados. Além disso, as operações no DOM podem ser custosas em termos de performance, especialmente se você estiver lidando com muitos componentes e elementos.
   
-11.  What is most frequently used in React ? Controlled or Uncontrolled input.
+### 5.  What is most frequently used in React ? Controlled or Uncontrolled input.
 
 Em geral é recomendado o uso de entradas controladas, pois é mais fácil de garantir a integridade dos dados e fazer validação dos campos. Entradas não controladas podem ser úteis em algumas situações específicas, mas geralmente não são recomendadas.
 
-13.  What do you need to write uncontrolled input?
+### 6.  What do you need to write uncontrolled input?
 
 Para escrever entradas não controladas em React, você precisará fazer o seguinte:
 
@@ -108,7 +109,7 @@ function UncontrolledInput() {
 }
 ```
 
-14.  Does state require to write uncontrolled input?
+### 7.  Does state require to write uncontrolled input?
 
 Não é necessário usar estado para escrever uma entrada não controlada no React, mas é uma prática recomendada, pois isso ajuda a garantir a consistência de dados e facilita o gerenciamento de erros e validação.
 
@@ -116,14 +117,14 @@ Quando você usa uma entrada não controlada, o valor do elemento de entrada nã
 
 Quando você usa estado para gerenciar o valor de uma entrada não controlada, você tem uma representação centralizada do valor do elemento de entrada, e pode usar essa representação para garantir a consistência de dados e validar a entrada. Além disso, você pode usar a referência para atualizar o valor do elemento de entrada quando o estado muda, garantindo que o valor do elemento de entrada sempre esteja sincronizado com o estado.
 
-15.  When do you use uncontrolled input?
+### 8.  When do you use uncontrolled input?
 
 Entradas não controladas, por outro lado, são úteis em situações em que o valor do elemento de entrada é gerenciado fora do alcance do componente. Isso pode incluir casos em que o valor é gerenciado por uma biblioteca externa ou pelo próprio navegador. Entradas não controladas também podem ser úteis em casos em que o valor do elemento de entrada é armazenado em outro lugar (como em uma store global) e não precisa ser gerenciado pelo componente.
 
-16.  When do you use controlled input?
+### 9.  When do you use controlled input?
 
 Entradas controladas são geralmente a escolha recomendada quando se trata de inputs em React. Isso porque elas têm a vantagem de garantir a consistência de dados e facilitar a validação e o gerenciamento de erros. Com entradas controladas, o valor do elemento de entrada é gerenciado pelo estado do componente, permitindo que o componente tenha o controle completo sobre o valor e o comportamento do elemento de entrada.
 
-17.  Do you use a controlled or uncontrolled input to validate form input fields?
+### 10.  Do you use a controlled or uncontrolled input to validate form input fields?
 
 Entradas controladas, pois são recomendadas para garantir a integridade dos dados e facilitar a validação e gerenciamento de erros,
