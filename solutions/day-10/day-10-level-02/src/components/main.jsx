@@ -22,7 +22,7 @@ const Main = () => {
             <List href={'...'} content={<FaPinterestP />} />
             <List href={'...'} content={<FaLinkedin />} />
           </ul>
-          <Button content={'Hire me'} />
+          <Button className={'button'} content={'Hire me'} />
         </Container>
       </Container>
     </section>

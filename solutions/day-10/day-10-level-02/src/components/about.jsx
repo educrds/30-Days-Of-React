@@ -23,7 +23,7 @@ const About = () => {
       <section>
         <Title text={'About me'} />
         <Container className={'about'}>
-          <Container>
+          <Container className={'about-photo'}>
             <Photo
               className={'profile-photo'}
               href={'/src/assets/imgs/peeps-avatar.png'}
@@ -37,7 +37,7 @@ const About = () => {
                 }
               />
 
-              <Button content={'Download CV'} />
+              <Button className={'button'} content={'Download CV'} />
             </Container>
             <Container className='skills'>
               <ProgressBar content={'Front-End'} percentage={'85%'} width={'85%'} />

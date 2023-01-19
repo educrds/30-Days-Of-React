@@ -1,30 +1,52 @@
+import { RiMoonFill, RiSunLine } from 'react-icons/ri';
 import { useState, useEffect } from 'react';
-import Button from './button';
+import { TbMenu2} from "react-icons/tb";
 import { Title } from './title';
+import Container from './container';
 import List from './list';
 
-const Navbar = () => {
-  const [theme, setTheme] = useState('light');
-  const changeTheme = () =>
-    theme === 'light' ? setTheme('dark') : setTheme('light');
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [{ theme, icon }, setMode] = useState({
+    theme: 'light',
+    icon: <RiMoonFill />,
+  });
+
+  const changeTheme = () => {
+    theme === 'light'
+      ? setMode({
+          theme: 'dark',
+          icon: <RiSunLine />,
+        })
+      : setMode({
+          theme: 'light',
+          icon: <RiMoonFill />,
+        });
+  };
 
   useEffect(() => {
     document.body.className = theme;
-  }, [theme]);
+  }, [icon]);
 
   return (
-    <>
-      <nav>
+    <nav className="navbar">
+      <Container className="navbar-logo">
         <Title text={'Bob_'} />
-        <ul>
-          <List href={'/'} content={'About'} />
-          <List href={'/'} content={'Services'} />
-          <List href={'/'} content={'Experience'} />
-          <Button className={'theme-button'} onClick={changeTheme} />
-        </ul>
-      </nav>
-    </>
+      </Container>
+      <Container className={`navbar-links ${isOpen && 'open'}`}>
+      <ul>
+         <List href={'/'} content={'About'} />
+         <List href={'/'} content={'Services'} />
+         <List href={'/'} content={'Experience'} />
+         <List className={'theme-button'} content={icon} onClick={changeTheme}/>
+       </ul>
+      </Container>
+      <Container className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
+        <TbMenu2 className={`${isOpen && 'open'}`}/>
+      </Container>
+    </nav>
   );
-};
+}
 
 export default Navbar;
