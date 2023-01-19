@@ -1,49 +1,70 @@
-import { useForm } from 'react-hook-form';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import validator from 'validator';
 
-function Form() {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+const FormExample = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+  });
 
-  const onSubmit = (data) => alert(data);
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setFormErrors({ ...formErrors, [event.target.name]: '' });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const fields = ['firstName', 'lastName', 'email'];
+    const errors = {};
+    fields.forEach((field) => {
+      if (validator.isEmpty(formData[field])) {
+        errors[field] = `O campo não pode estar em branco!`;
+      }
+      if (field === 'email' && !validator.isEmail(formData[field])) {
+        errors[field] = 'O campo email é inválido!';
+      }
+    });
+    setFormErrors(errors);
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor='firstName'>Name</label>
-        <input
-          {...register('firstName', { required: true })}
-          aria-invalid={errors.firstName ? 'true' : 'false'}
+    <Form className='text-center' onSubmit={handleSubmit}>
+      <Form.Group className='m-auto my-3 w-50 text-start'>
+        <Form.Label htmlFor='firstName'>Nome</Form.Label>
+        <Form.Control
+          type='text'
+          name='firstName'
+          id='firstName'
+          onChange={handleChange}
         />
-        {errors.firstName?.type === 'required' && (
-          <p role='alert'>First name is required</p>
-        )}
-      </div>
-
-      <div>
-        <label htmlFor='lastName'>Last name</label>
-        <input
-          {...register('lastName', { required: 'Last name is required' })}
-          aria-invalid={errors.lastName ? 'true' : 'false'}
+        {formErrors.firstName && <div>{formErrors.firstName}</div>}
+      </Form.Group>
+      <Form.Group className='m-auto my-3 w-50 text-start'>
+        <Form.Label htmlFor='lastName'>Sobrenome</Form.Label>
+        <Form.Control
+          type='text'
+          name='lastName'
+          id='lastName'
+          onChange={handleChange}
         />
-        {errors.lastName && <p role='alert'>{errors.lastName?.message}</p>}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          {...register('mail', {
-            required: 'Email Address is required',
-            pattern: { value: /^\S+@\S+.\S+$/, message: 'Email address is invalid' },
-          })}
-          aria-invalid={errors.mail ? 'true' : 'false'}
-        />
-        {errors.mail && <p role='alert'>{errors.mail?.message}</p>}
-      </div>
-      <input type='submit' />
-    </form>
+        {formErrors.lastName && <div>{formErrors.lastName}</div>}
+      </Form.Group>
+      <Form.Group className='m-auto my-3 w-50 text-start'>
+        <Form.Label htmlFor='email'>Email</Form.Label>
+        <Form.Control type='email' name='email' id='email' onChange={handleChange} />
+        {formErrors.email && <div>{formErrors.email}</div>}
+      </Form.Group>
+      <Button className='w-50' type='submit' color='primary'>
+        Enviar
+      </Button>
+    </Form>
   );
-}
+};
 
-export default Form;
+export default FormExample;
