@@ -1,6 +1,6 @@
-import Container from './container';
-import Photo from './photo';
-import { SmallTitle, Title } from './title';
+import Container from './Container';
+import Photo from './Photo';
+import { SmallTitle, Title } from './Title';
 
 const Square = ({ text, content, img, children }) => {
   return (

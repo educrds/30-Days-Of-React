@@ -1,7 +1,7 @@
-import { Title, SmallTitle } from './title';
-import Photo from './photo';
-import Button from './button';
-import Container from './container';
+import { Title, SmallTitle } from './Title';
+import Photo from './Photo';
+import Button from './Button';
+import Container from './Container';
 
 const ProgressBar = ({ content, percentage, width }) => {
   return (

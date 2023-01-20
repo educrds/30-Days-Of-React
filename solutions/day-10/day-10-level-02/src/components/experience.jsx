@@ -1,5 +1,5 @@
-import Container from './container';
-import { SmallTitle, Title } from './title';
+import Container from './Container';
+import { SmallTitle, Title } from './Title';
 import { VscMortarBoard } from 'react-icons/vsc';
 
 const Experience = () => {

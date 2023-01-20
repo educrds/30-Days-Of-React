@@ -1,9 +1,9 @@
 import { RiMoonFill, RiSunLine } from 'react-icons/ri';
 import { useState, useEffect } from 'react';
 import { TbMenu2} from "react-icons/tb";
-import { Title } from './title';
-import Container from './container';
-import List from './list';
+import { Title } from './Title';
+import Container from './Container';
+import List from './List';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,11 +1,12 @@
 import './App.css';
-import Navbar from './components/navbar';
-import Main from './components/main';
-import About from './components/about';
-import Projects from './components/projects';
-import Container from './components/container';
-import Services from './components/services';
-import Experience from './components/experience';
+import Navbar from './components/Navbar';
+import Main from './components/Main';
+import About from './components/About';
+import Projects from './components/Projects';
+import Container from './components/Container';
+import Services from './components/Services';
+import Experience from './components/Experience';
+import TechList from './components/TechList';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Navbar />
       <Main />
       <About />
+      <TechList />
       <Projects />
       <Services />
       <Experience />

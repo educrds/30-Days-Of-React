@@ -1,9 +1,9 @@
 import { FaPinterestP, FaInstagram, FaBehance, FaLinkedin } from 'react-icons/fa';
-import { Title, SmallTitle } from './title';
-import Container from './container';
-import Photo from './photo';
-import List from './list';
-import Button from './button';
+import { Title, SmallTitle } from './Title';
+import Container from './Container';
+import Photo from './Photo';
+import List from './List';
+import Button from './Button';
 
 const socialNetworks = [
   { icon: <FaInstagram /> },

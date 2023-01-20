@@ -1,6 +1,6 @@
-import Container from './container';
-import Square from './square';
-import { Title } from './title';
+import Container from './Container';
+import Square from './Square';
+import { Title } from './Title';
 
 const Services = () => {
   return (
