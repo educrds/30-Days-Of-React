@@ -5,6 +5,13 @@ import Photo from './photo';
 import List from './list';
 import Button from './button';
 
+const socialNetworks = [
+  { icon: <FaInstagram /> },
+  { icon: <FaBehance /> },
+  { icon: <FaPinterestP /> },
+  { icon: <FaLinkedin /> },
+];
+
 const Main = () => {
   return (
     <section>
@@ -17,10 +24,9 @@ const Main = () => {
           <Title text={'Bob Doe'} />
           <SmallTitle content={"I'm a Web Development"} />
           <ul className='social-icons'>
-            <List href={'...'} content={<FaInstagram />} />
-            <List href={'...'} content={<FaBehance />} />
-            <List href={'...'} content={<FaPinterestP />} />
-            <List href={'...'} content={<FaLinkedin />} />
+            {socialNetworks.map(({ icon }) => (
+              <List content={icon} />
+            ))}
           </ul>
           <Button className={'button'} content={'Hire me'} />
         </Container>

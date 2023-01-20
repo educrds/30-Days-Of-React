@@ -1,5 +1,12 @@
-import Container from './container';
 import { FaLayerGroup, FaCoffee, FaCode, FaUserFriends } from 'react-icons/fa';
+import Container from './container';
+
+const data = [
+  { text: 'Item completed', number: 198, icon: <FaLayerGroup />},
+  { text: 'Satisfied clients', number: 200, icon: <FaUserFriends />},
+  { text: 'Cup of coffe', number: 1100, icon: <FaCoffee /> },
+  { text: 'Lines code', number: 10000, icon: <FaCode /> },
+];
 
 const Item = ({ number, icon, text }) => {
   return (
@@ -16,15 +23,11 @@ const Item = ({ number, icon, text }) => {
 const Projects = () => {
   return (
     <Container className='container'>
-      <Item text={'Item completed'} number={198} icon={<FaLayerGroup />} />
-      <Item text={'Satisfied clients'} number={200} icon={<FaUserFriends />} />
-      <Item text={'Cup of coffe'} number={1100} icon={<FaCoffee />} />
-      <Item text={'Lines code'} number={10000} icon={<FaCode />} />
+      {data.map(({ text, icon, number }) => (
+        <Item text={text} number={number} icon={icon} />
+      ))}
     </Container>
   );
 };
 
 export default Projects;
-
-// colocar sass nesse projeto
-// loop nas informaçoes que se repetem, por exemplo, redes sociais
