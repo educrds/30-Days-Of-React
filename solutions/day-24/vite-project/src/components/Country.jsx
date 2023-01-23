@@ -5,6 +5,7 @@ const Countries = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [perPage] = useState(25);
+  const [search, setSearch] = useState('');
 
   const getCountries = async () => {
     try {
@@ -20,12 +21,20 @@ const Countries = () => {
     getCountries();
   }, []);
 
-  const currentData = data.slice((page - 1) * perPage, page * perPage);
-  const totalPages = Math.ceil(data.length / perPage);
+  const filteredData = data.filter(country =>
+    country.name.common.toLowerCase().includes(search.toLowerCase())
+  );
+  const currentData = filteredData.slice((page - 1) * perPage, page * perPage);
+  const totalPages = Math.ceil(filteredData.length / perPage);
 
   return (
     <div className='App'>
-      <h1>Flags</h1>
+      <input
+        type='text'
+        placeholder='Country'
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+      />
       <div className='container'>
         {currentData.map(({ flags, name, capital, languages, population }, index) => (
           <div className='card' key={index}>
@@ -35,10 +44,12 @@ const Countries = () => {
               {capital && (
                 <Info title={'Capital:'}>{capital?.length > 1 ? capital[0] : capital}</Info>
               )}
-              <Info title={'Language:'}>{Object.values(languages)[0]}</Info>
-              <Info title={'Population:'}>
-                {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
-              </Info>
+              {languages && <Info title={'Language:'}>{Object.values(languages)[0]}</Info>}
+              {population > 0 && (
+                <Info title={'Population:'}>
+                  {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+                </Info>
+              )}
             </div>
           </div>
         ))}

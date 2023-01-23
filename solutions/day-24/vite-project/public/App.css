@@ -26,12 +26,12 @@ span {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  justify-content: center;
-  margin: 3vh 0 5vh;
+  margin-bottom: 5vh;
+  justify-content: space-between;
 }
 .card {
   width: 250px;
-  padding: 4vh 1.5vw 4vh;
+  padding: 3vh 1.5vw 4vh;
   background-color: #f9f9f9;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -63,4 +63,10 @@ button:disabled {
   left: 0;
   display: flex;
   justify-content: center;
+}
+input {
+  font-size: 1.2rem;
+  border: 1px solid rgb(223, 223, 223);
+  padding: 1vh 2vw;
+  margin-bottom: 4vh;
 }
