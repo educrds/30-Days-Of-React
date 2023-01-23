@@ -1,0 +1,97 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+}
+* {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+h1,
+h2,
+h3 {
+  font-size: 28px;
+  margin: 0 0 1vh;
+  color: #386641;
+  font-weight: 500;
+}
+span {
+  font-weight: normal;
+}
+.card {
+  min-width: 500px;
+  width: 700px;
+  padding: 4vh 2vw;
+  margin-bottom: 3vh;
+  background-color: #f9f9f9;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.catImage img {
+  width: 30vw;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.infos {
+  text-align: center;
+  line-height: 1.75;
+}
+button {
+  border: none;
+  padding: 1.5vh 3vw;
+  border-radius: 1rem;
+  font-weight: 700;
+  background-color: #57cc99;
+  color: #fcfcfc;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.1);
+}
+.innerCard {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1vw 0 2vw;
+  margin: 1vh 0;
+}
+.innerCard p,
+.catDescription p {
+  color: #386641;
+}
+.innerCard ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  flex-direction: row;
+  gap: 10px;
+}
+.innerCard li {
+  color: #57cc99;
+  background: #c7f9cc;
+  padding: 0.4vh 0.8vw;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+}
+.container {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+}
+.container .innerCard {
+  flex: 1;
+}
