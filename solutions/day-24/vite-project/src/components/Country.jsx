@@ -1,30 +1,18 @@
-import { usePagination, Pagination } from './Pagination';
-import { useState, useEffect } from 'react';
+import usePagination from '../hooks/usePagination';
+import useCountries from '../hooks/useCountries';
 import CountryCard from './CountryCard';
 import SearchInput from './SearchInput';
+import Pagination from './Pagination';
+import { useState } from 'react';
 
 const Countries = () => {
-  const [data, setData] = useState([]);
+  const data = useCountries();
   const [search, setSearch] = useState('');
   const { page, setPage, perPage } = usePagination();
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('https://restcountries.com/v3.1/all');
-        const countries = await response.json();
-        setData(countries);
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
-
-  const filterData = (data, search) => {
-    const regex = new RegExp(search, 'gi');
-    return data.filter(country => regex.test(country.name.common));
-  };
-
+  const filterData = (data, search) =>
+    data.filter(country => country.name.common.toLowerCase().includes(search.toLowerCase()));
+    
   const filteredData = filterData(data, search);
   const currentData = filteredData.slice((page - 1) * perPage, page * perPage);
   const totalPages = Math.ceil(filteredData.length / perPage);

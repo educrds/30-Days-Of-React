@@ -1,12 +1,3 @@
-import { useState } from 'react';
-
-function usePagination() {
-  const [page, setPage] = useState(1);
-  const [perPage] = useState(25);
-
-  return { page, setPage, perPage };
-}
-
 const Pagination = ({ totalPages, setPage, page }) => {
   return (
     <div className='pagination'>
@@ -29,4 +20,4 @@ const Pagination = ({ totalPages, setPage, page }) => {
   );
 };
 
-export { usePagination, Pagination };
+export default Pagination;
