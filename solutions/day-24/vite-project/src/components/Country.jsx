@@ -1,5 +1,7 @@
-import Info from './Info';
-import React, { useEffect, useState } from 'react';
+import Pagination from './Pagination';
+import { useState, useEffect } from 'react';
+import CountryCard from './CountryCard';
+import SearchInput from './SearchInput';
 
 const Countries = () => {
   const [data, setData] = useState([]);
@@ -7,60 +9,36 @@ const Countries = () => {
   const [perPage] = useState(25);
   const [search, setSearch] = useState('');
 
-  const getCountries = async () => {
-    try {
-      const response = await fetch('https://restcountries.com/v3.1/all');
-      const countries = await response.json();
-      setData(countries);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
-    getCountries();
+    (async () => {
+      try {
+        const response = await fetch('https://restcountries.com/v3.1/all');
+        const countries = await response.json();
+        setData(countries);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
   }, []);
 
-  const filteredData = data.filter(country =>
-    country.name.common.toLowerCase().includes(search.toLowerCase())
-  );
+  const filterData = (data, search) => {
+    const regex = new RegExp(search, 'gi');
+    return data.filter(country => regex.test(country.name.common));
+  };
+
+  const filteredData = filterData(data, search);
   const currentData = filteredData.slice((page - 1) * perPage, page * perPage);
   const totalPages = Math.ceil(filteredData.length / perPage);
 
   return (
     <div className='App'>
-      <input
-        type='text'
-        placeholder='Country'
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-      />
+      <SearchInput search={search} setSearch={setSearch} />
       <div className='container'>
-        {currentData.map(({ flags, name, capital, languages, population }, index) => (
-          <div className='card' key={index}>
-            <img src={flags.png} alt={name.common} />
-            <h1>{name.common}</h1>
-            <div className='infos'>
-              {capital && (
-                <Info title={'Capital:'}>{capital?.length > 1 ? capital[0] : capital}</Info>
-              )}
-              {languages && <Info title={'Language:'}>{Object.values(languages)[0]}</Info>}
-              {population > 0 && (
-                <Info title={'Population:'}>
-                  {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
-                </Info>
-              )}
-            </div>
-          </div>
+        {currentData.map((country, index) => (
+          <CountryCard key={index} {...country} />
         ))}
       </div>
-      <div className='pagination'>
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button onClick={() => setPage(i + 1)} disabled={i + 1 === page}>
-            {i + 1}
-          </button>
-        ))}
-      </div>
+      <Pagination totalPages={totalPages} setPage={setPage} page={page} />
     </div>
   );
 };
