@@ -1,21 +1,18 @@
-import usePagination from '../hooks/usePagination';
-import useCountries from '../hooks/useCountries';
-import CountryCard from './CountryCard';
-import SearchInput from './SearchInput';
+// Components
 import Pagination from './Pagination';
-import { useState } from 'react';
+import SearchInput from './SearchInput';
+import CountryCard from './CountryCard';
+// Hooks
+import useSearch from '../hooks/useSearch';
+import usePagination from '../hooks/usePagination';
+import useFilterData from '../hooks/useFilteredData';
+import useCurrentData from '../hooks/useCurrentData';
 
 const Countries = () => {
-  const data = useCountries();
-  const [search, setSearch] = useState('');
   const { page, setPage, perPage } = usePagination();
-
-  const filterData = (data, search) =>
-    data.filter(country => country.name.common.toLowerCase().includes(search.toLowerCase()));
-    
-  const filteredData = filterData(data, search);
-  const currentData = filteredData.slice((page - 1) * perPage, page * perPage);
-  const totalPages = Math.ceil(filteredData.length / perPage);
+  const { data, search, setSearch } = useSearch();
+  const { filteredData, totalPages } = useFilterData(data, search, perPage);
+  const currentData = useCurrentData(filteredData, page, perPage);
 
   return (
     <>
