@@ -1,7 +1,7 @@
 // Components
 import Pagination from './Pagination';
 import SearchInput from './SearchInput';
-import CountriesList from './CountrisList';
+import CountriesList from './CountriesList';
 // Hooks
 import useSearch from '../hooks/useSearch';
 import usePagination from '../hooks/usePagination';

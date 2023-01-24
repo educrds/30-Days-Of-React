@@ -1,5 +1,8 @@
 const Language = ({ languages }) => {
-  return <>{languages && <p>Language: {Object.values(languages)[0]}</p>}</>;
+  if (languages) {
+    return <p>Language: {Object.values(languages)[0]}</p>;
+  }
+  return;
 };
 
 export default Language;
