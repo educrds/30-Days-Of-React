@@ -6,7 +6,10 @@ const Pagination = ({ totalPages, setPage, page }) => {
         return (
           <button
             key={index}
-            onClick={() => setPage(pageNumber)}
+            onClick={() => {
+              setPage(pageNumber);
+              window.scrollTo(0, 0);
+            }}
             disabled={pageNumber === page}
           >
             {pageNumber}
