@@ -1,7 +1,7 @@
 // Components
 import Pagination from './Pagination';
 import SearchInput from './SearchInput';
-import CountryCard from './CountryCard';
+import CountriesList from './CountrisList';
 // Hooks
 import useSearch from '../hooks/useSearch';
 import usePagination from '../hooks/usePagination';
@@ -17,11 +17,7 @@ const Countries = () => {
   return (
     <>
       <SearchInput search={search} setSearch={setSearch} />
-      <div className='container'>
-        {currentData.map((country, index) => (
-          <CountryCard key={index} {...country} />
-        ))}
-      </div>
+      <CountriesList currentData={currentData} />
       <Pagination totalPages={totalPages} setPage={setPage} page={page} />
     </>
   );
