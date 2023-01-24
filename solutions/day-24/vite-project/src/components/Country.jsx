@@ -1,13 +1,12 @@
-import Pagination from './Pagination';
+import { usePagination, Pagination } from './Pagination';
 import { useState, useEffect } from 'react';
 import CountryCard from './CountryCard';
 import SearchInput from './SearchInput';
 
 const Countries = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
-  const [perPage] = useState(25);
   const [search, setSearch] = useState('');
+  const { page, setPage, perPage } = usePagination();
 
   useEffect(() => {
     (async () => {
@@ -31,7 +30,7 @@ const Countries = () => {
   const totalPages = Math.ceil(filteredData.length / perPage);
 
   return (
-    <div className='App'>
+    <>
       <SearchInput search={search} setSearch={setSearch} />
       <div className='container'>
         {currentData.map((country, index) => (
@@ -39,7 +38,7 @@ const Countries = () => {
         ))}
       </div>
       <Pagination totalPages={totalPages} setPage={setPage} page={page} />
-    </div>
+    </>
   );
 };
 
