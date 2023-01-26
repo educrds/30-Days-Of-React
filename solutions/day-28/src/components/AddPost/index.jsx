@@ -5,7 +5,7 @@ const CreatePost = () => {
   return (
     <>
       <PostContainer>
-        <AddPost placeholder='What do you thinking?' rows={4} />
+        <AddPost placeholder='What do you thinking?' rows={4} autoFocus={true} />
         <AddButton onClick={() => alert('click')}>Add</AddButton>
       </PostContainer>
     </>

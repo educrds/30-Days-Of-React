@@ -15,7 +15,6 @@ const AddPost = styled.textarea`
   border-radius: 0.5rem;
   padding: 1.5vh 1vw;
   width: 100%;
-  margin-bottom: 2vh;
   font-size: 0.95rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
@@ -30,10 +29,10 @@ const AddButton = styled.button`
   background-color: #023047;
   padding: 1vh 2vw;
   color: #fff;
-  float: right;
-  cursor: pointer;
+  margin: 2vh 0;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-
+  cursor: pointer;
+  
   &:hover {
     transform: translateY(-7px);
     transition: transform 0.4s ease-in-out;
