@@ -1,43 +1,68 @@
 import React, { useState } from 'react';
-import {
-  HiUserCircle,
-  HiOutlineHeart,
-  HiPencilAlt,
-  HiTrash,
-  HiOutlineTrash,
-  HiHeart,
-} from 'react-icons/hi';
+import { HiUserCircle, HiOutlineHeart, HiPencilAlt, HiOutlineTrash, HiHeart } from 'react-icons/hi';
 import { Container, Row } from './styles';
 
 const Post = () => {
-  const [isLiked, setIsLiked] = useState(false);
+  const [posts, setPosts] = useState([
+    {
+      username: 'Anonymous',
+      content:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, cupiditate obcaecatiiure suscipit necessitatibus, ex facere ipsam corrupti nam blanditiis placeat.',
+      isLiked: false,
+    },
+    {
+      username: 'Anonymous',
+      content:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, cupiditate obcaecatiiure suscipit necessitatibus, ex facere ipsam corrupti nam blanditiis placeat.',
+      isLiked: false,
+    },
+    {
+      username: 'Anonymous',
+      content:
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, cupiditate obcaecatiiure suscipit necessitatibus, ex facere ipsam corrupti nam blanditiis placeat.',
+      isLiked: false,
+    },
+  ]);
 
-  const handleClick = () => setIsLiked(prevState => !prevState);
+  const handleClick = index => {
+    const newPosts = [...posts];
+    newPosts[index].isLiked = !newPosts[index].isLiked;
+    setPosts(newPosts);
+  };
+
   return (
     <>
-      <Container>
-        <Row>
-          <HiUserCircle className='profile-icon' />
-          <h3>John</h3>
-        </Row>
-        <Row>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, cupiditate obcaecati
-            iure suscipit necessitatibus, ex facere ipsam corrupti nam blanditiis placeat, provident
-            voluptate! Totam voluptas perspiciatis, corrupti dolore harum officiis.
-          </p>
-        </Row>
-        <Row>
-          <div onClick={handleClick}>{isLiked ? <HiHeart /> : <HiOutlineHeart />}</div>
-          <div>
-            <HiPencilAlt />
-          </div>
-          <div>
-            <HiTrash />
-          </div>
-        </Row>
-      </Container>
+      {posts.map((post, index) => {
+        return (
+          <Container>
+            <PersonalInfo name={post.username} />
+            <Row>
+              <p>{post.content}</p>
+            </Row>
+            <SocialIcons onLike={() => handleClick(index)} isLiked={post.isLiked} />
+          </Container>
+        );
+      })}
     </>
+  );
+};
+
+const SocialIcons = ({ onLike, isLiked, onTrash, onEdit }) => {
+  return (
+    <Row>
+      <div onClick={onLike}>{isLiked ? <HiHeart /> : <HiOutlineHeart />}</div>
+      <div onClick={onEdit}><HiPencilAlt /></div>
+      <div onClick={onTrash}><HiOutlineTrash /></div>
+    </Row>
+  );
+};
+
+const PersonalInfo = ({ name }) => {
+  return (
+    <Row>
+      <HiUserCircle className='profile-icon' />
+      <h3>{name}</h3>
+    </Row>
   );
 };
 

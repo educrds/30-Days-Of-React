@@ -24,11 +24,10 @@ const Row = styled.div`
     font-size: 1.5rem;
     margin-right: 3vw;
   }
-
-  & :hover {
-    transform: translateY(-2px);
+  svg:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
     transition: transform 0.4s ease-in-out;
-    cursor:pointer;
   }
 `;
 export { Container, Row };
