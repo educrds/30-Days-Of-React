@@ -331,6 +331,9 @@ button,
   flex-direction: column;
   justify-content: space-between;
 }
+.exp-container p:nth-child(1){
+  color: rgb(121, 121, 121);
+}
 .exp-icon {
   font-size: 2rem;
   color: #ffd15c;
