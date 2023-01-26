@@ -26,10 +26,14 @@ const Experience = () => {
       <Title text='Experience' />
       <Container className='experience'>
         <div className='square'>
-          {experienceList.map(({ ...experience }) => <ExpInfo {...experience} /> )}
+          {experienceList.map(({ ...experience }) => (
+            <ExpInfo {...experience} />
+          ))}
         </div>
         <div className='square'>
-          {experienceList.map(({ ...experience }) => <ExpInfo {...experience} /> )}
+          {experienceList.map(({ ...experience }) => (
+            <ExpInfo {...experience} />
+          ))}
         </div>
       </Container>
     </section>
@@ -38,11 +42,16 @@ const Experience = () => {
 
 const ExpInfo = ({ period, title, description }) => {
   return (
-    <div className='exp-description'>
-      <VscMortarBoard className='exp-icon' />
-      <SmallTitle content={period} />
-      <Title text={title} />
-      <SmallTitle content={description} />
+    <div className='exp-container'>
+      <div className='exp-icon'>
+        <VscMortarBoard />
+        <div className="exp-line"></div>
+      </div>
+      <div>
+        <SmallTitle content={period} />
+        <Title text={title} />
+        <SmallTitle content={description} />
+      </div>
     </div>
   );
 };

@@ -288,14 +288,12 @@ button,
 
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  box-shadow: inset 0 1px 2px rgba(114, 110, 110, 0.25),
-    0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 2px rgba(114, 110, 110, 0.25), 0 1px rgba(255, 255, 255, 0.05);
   background-color: #ccc;
 }
 
 ::-webkit-scrollbar {
-  box-shadow: inset 0 1px 2px rgba(114, 110, 110, 0.25),
-    0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 2px rgba(114, 110, 110, 0.25), 0 1px rgba(255, 255, 255, 0.05);
   width: 8px;
 }
 
@@ -327,12 +325,8 @@ button,
 
 /* Experience */
 
-.experience {
-  grid-template-columns: 1fr 1fr;
-}
 .experience .square {
   text-align: left;
-  padding: 5vh 6vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -340,19 +334,18 @@ button,
 .exp-icon {
   font-size: 2rem;
   color: #ffd15c;
-  position: absolute;
-  left: 30px;
+  margin-right: 1rem;
 }
-.exp-description {
+.exp-container {
+  display: flex;
   padding: 1vw 0;
+  overflow: hidden;
 }
-.line {
-  border-left: 2px solid #ffd15c;
-  border-radius: 2rem;
-  height: 50px;
-  position: absolute;
-  left: 45px;
-  top: 10px;
+.exp-line {
+  height: 100%;
+  width: 2px;
+  background-color: #ffd15c;
+  margin: auto;
 }
 
 /* Media Queries */
@@ -435,7 +428,7 @@ button,
   }
 
   .experience .square {
-    padding: 4vh 17vw;
+    padding: 5vh 10vw;
   }
   .exp-description {
     padding: 4vw 0;
