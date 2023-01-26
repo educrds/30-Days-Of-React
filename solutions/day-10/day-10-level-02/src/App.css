@@ -54,6 +54,10 @@ section > h1 {
   font-size: 2rem;
 }
 
+svg:hover {
+  color: #ffd15c;
+}
+
 .theme-button {
   cursor: pointer;
   font-size: 1.3rem;
@@ -122,10 +126,6 @@ button {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
   text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: #333;
-}
-
-svg:hover {
-  color: #ffd15c;
 }
 
 a:hover,
@@ -213,6 +213,51 @@ button,
   padding: 3vh 3vw;
   row-gap: 3vh;
 }
+.tech-item p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+/* Projects */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  justify-items: center;
+}
+
+.element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element span {
+  font-size: 2rem;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.text-title {
+  line-height: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.text-subtitle {
+  font-size: 1.1rem;
+  color: gray;
+}
+
+.tech-item svg {
+  font-size: 4rem;
+}
 
 .tech-item svg {
   font-size: 4rem;
@@ -245,43 +290,6 @@ button,
 }
 .React svg {
   color: #5ed3f3;
-}
-/* Projects */
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: space-between;
-  justify-items: center;
-}
-
-.element {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.element svg {
-  font-size: 3.5rem;
-  color: #cccccf;
-  padding-right: 1.2vw;
-}
-
-.text-container {
-  display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-  width: 100%;
-}
-
-.text-title {
-  line-height: 2rem;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.text-subtitle {
-  font-size: 1.1rem;
-  color: gray;
 }
 
 /* ScrollBar */
@@ -331,7 +339,7 @@ button,
   flex-direction: column;
   justify-content: space-between;
 }
-.exp-container p:nth-child(1){
+.exp-container p:nth-child(1) {
   color: rgb(121, 121, 121);
 }
 .exp-icon {
@@ -385,10 +393,6 @@ button,
     z-index: 1;
   }
 
-  .navbar-toggle.open svg {
-    transform: rotate(45deg);
-  }
-
   .navbar-links.open ul {
     list-style: none;
     display: flex;
@@ -405,10 +409,6 @@ button,
   .experience {
     flex-direction: column;
   }
-  .projects {
-    grid-template-columns: 1fr 1fr;
-    row-gap: 25px;
-  }
   .tech-list > .tech-item {
     flex: 1 0 50%;
   }
@@ -423,18 +423,12 @@ button,
     margin: auto;
     justify-content: center;
   }
-  .element svg {
-    font-size: 3rem;
-  }
   .text-title {
     font-size: 2.3rem;
   }
 
   .experience .square {
     padding: 5vh 10vw;
-  }
-  .exp-description {
-    padding: 4vw 0;
   }
   .about {
     display: grid;
@@ -476,9 +470,6 @@ button,
   }
   .experience .square {
     padding: 3vh 15vw;
-  }
-  .exp-description {
-    padding: 4vw 0;
   }
   .tech-item {
     flex: 1 0 calc(100% / 4);
