@@ -1,6 +1,6 @@
 import { RiMoonFill, RiSunLine } from 'react-icons/ri';
 import { useState, useEffect } from 'react';
-import { TbMenu2} from "react-icons/tb";
+import { TbMenu2 } from 'react-icons/tb';
 import { Title } from './Title';
 import Container from './Container';
 import List from './List';
@@ -30,20 +30,20 @@ function Navbar() {
   }, [icon]);
 
   return (
-    <nav className="navbar">
-      <Container className="navbar-logo">
-        <Title text={'Bob_'} />
+    <nav className='navbar'>
+      <Container className='navbar-logo'>
+        <Title text='Bob_' />
       </Container>
       <Container className={`navbar-links ${isOpen && 'open'}`}>
-      <ul>
-         <List href={'/'} content={'About'} />
-         <List href={'/'} content={'Services'} />
-         <List href={'/'} content={'Experience'} />
-         <List className={'theme-button'} content={icon} onClick={changeTheme}/>
-       </ul>
+        <ul>
+          <List href='/' content='About' />
+          <List href='/' content='Services' />
+          <List href='/' content='Experience' />
+          <List className={'theme-button'} content={icon} onClick={changeTheme} />
+        </ul>
       </Container>
-      <Container className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
-        <TbMenu2 className={`${isOpen && 'open'}`}/>
+      <Container className='navbar-toggle' onClick={() => setIsOpen(!isOpen)}>
+        <TbMenu2 className={`${isOpen && 'open'}`} />
       </Container>
     </nav>
   );

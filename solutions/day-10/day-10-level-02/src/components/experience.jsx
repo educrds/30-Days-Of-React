@@ -2,67 +2,45 @@ import Container from './Container';
 import { SmallTitle, Title } from './Title';
 import { VscMortarBoard } from 'react-icons/vsc';
 
+const experienceList = [
+  {
+    period: '2023 - January',
+    title: 'Front-End',
+    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+  },
+  {
+    period: '2023 - January',
+    title: 'Front-End',
+    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+  },
+  {
+    period: '2023 - January',
+    title: 'Front-End',
+    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+  },
+];
+
 const Experience = () => {
   return (
     <section>
-      <Title text={'Experience'} />
-      <Container className={'experience'}>
+      <Title text='Experience' />
+      <Container className='experience'>
         <div className='square'>
-          <ExpInfo
-            month={'2023 - January'}
-            title={'Front-End'}
-            description={
-              'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.'
-            }
-          />
-          <ExpInfo
-            month={'2022 - December'}
-            title={'Front-End'}
-            description={
-              'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.'
-            }
-          />
-          <ExpInfo
-            month={'2022 - November'}
-            title={'UX/UI Designer'}
-            description={
-              'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.'
-            }
-          />
+          {experienceList.map(({ ...experience }) => <ExpInfo {...experience} /> )}
         </div>
         <div className='square'>
-          <ExpInfo
-            month={'2023 - January'}
-            title={'Front-End'}
-            description={
-              'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.'
-            }
-          />
-          <ExpInfo
-            month={'2022 - December'}
-            title={'Front-End'}
-            description={
-              'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.'
-            }
-          />
-          <ExpInfo
-            month={'2022 - November'}
-            title={'Front-End'}
-            description={
-              'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.'
-            }
-          />
+          {experienceList.map(({ ...experience }) => <ExpInfo {...experience} /> )}
         </div>
       </Container>
     </section>
   );
 };
 
-const ExpInfo = ({ month, title, description }) => {
+const ExpInfo = ({ period, title, description }) => {
   return (
     <div className='exp-description'>
       <VscMortarBoard className='exp-icon' />
-      <SmallTitle content={month} />
+      <SmallTitle content={period} />
       <Title text={title} />
       <SmallTitle content={description} />
     </div>

@@ -10,9 +10,9 @@ const data = [
 
 const Item = ({ number, icon, text }) => {
   return (
-    <Container className={'element'}>
+    <Container className='element'>
       <span>{icon}</span>
-      <Container className={'text-container'}>
+      <Container className='text-container'>
         <p className='text-title'>{number}</p>
         <p className='text-subtitle'>{text}</p>
       </Container>
@@ -23,9 +23,7 @@ const Item = ({ number, icon, text }) => {
 const Projects = () => {
   return (
     <Container className='container'>
-      {data.map(({ text, icon, number }) => (
-        <Item key={text} text={text} number={number} icon={icon} />
-      ))}
+      {data.map(({ ...data }) => <Item key={data.text} {...data} /> )}
     </Container>
   );
 };

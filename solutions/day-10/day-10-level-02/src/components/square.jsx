@@ -2,12 +2,12 @@ import Container from './Container';
 import Photo from './Photo';
 import { SmallTitle, Title } from './Title';
 
-const Square = ({ text, content, img, children }) => {
+const Square = ({ title, content, image }) => {
   return (
     <>
-      <Container className={'square'}>
-        <Photo href={img} />
-        <Title text={text} />
+      <Container className='square'>
+        <Photo href={image} />
+        <Title text={title} />
         <SmallTitle content={content} />
       </Container>
     </>
