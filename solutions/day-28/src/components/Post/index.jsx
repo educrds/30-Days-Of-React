@@ -1,60 +1,43 @@
-import React, { useState } from 'react';
-import { HiUserCircle, HiOutlineHeart, HiPencilAlt, HiOutlineTrash, HiHeart } from 'react-icons/hi';
+import { HiUserCircle, HiOutlineHeart, HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi';
 import { Container, Row } from './styles';
 
-const Post = () => {
-  const [posts, setPosts] = useState([
+const Post = ({ username, content, onDelete, onEdit, id }) => {
+  const handleClick = () => {
     {
-      username: 'Anonymous',
-      content:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, cupiditate obcaecatiiure suscipit necessitatibus, ex facere ipsam corrupti nam blanditiis placeat.',
-      isLiked: false,
-    },
-    {
-      username: 'Anonymous',
-      content:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, cupiditate obcaecatiiure suscipit necessitatibus, ex facere ipsam corrupti nam blanditiis placeat.',
-      isLiked: false,
-    },
-    {
-      username: 'Anonymous',
-      content:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, cupiditate obcaecatiiure suscipit necessitatibus, ex facere ipsam corrupti nam blanditiis placeat.',
-      isLiked: false,
-    },
-  ]);
+      onDelete(id);
+    }
+  };
 
-  const handleClick = index => {
-    const newPosts = [...posts];
-    newPosts[index].isLiked = !newPosts[index].isLiked;
-    setPosts(newPosts);
+  const handleEdit = () => {
+    {
+      onEdit(id);
+    }
   };
 
   return (
-    <>
-      {posts.map((post, index) => {
-        return (
-          <Container>
-            <PersonalInfo name={post.username} />
-            <Row>
-              <p>{post.content}</p>
-            </Row>
-            <SocialIcons onLike={() => handleClick(index)} isLiked={post.isLiked} />
-          </Container>
-        );
-      })}
-    </>
+    <Container>
+      <PersonalInfo name={username} />
+      <Row>
+        <p>{content}</p>
+      </Row>
+      <Row>
+        {/* <Icon>{isLiked ? <HiHeart /> : <HiOutlineHeart />}</Icon> */}
+        <Icon>
+          <HiOutlineHeart />
+        </Icon>
+        <Icon onClick={handleEdit}>
+          <HiOutlinePencilAlt />
+        </Icon>
+        <Icon onClick={handleClick}>
+          <HiOutlineTrash />
+        </Icon>
+      </Row>
+    </Container>
   );
 };
 
-const SocialIcons = ({ onLike, isLiked, onTrash, onEdit }) => {
-  return (
-    <Row>
-      <div onClick={onLike}>{isLiked ? <HiHeart /> : <HiOutlineHeart />}</div>
-      <div onClick={onEdit}><HiPencilAlt /></div>
-      <div onClick={onTrash}><HiOutlineTrash /></div>
-    </Row>
-  );
+const Icon = ({ onClick, children }) => {
+  return <div onClick={onClick}>{children}</div>;
 };
 
 const PersonalInfo = ({ name }) => {

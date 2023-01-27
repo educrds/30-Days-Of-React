@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { iconHover, square } from '../../styles/globalStyles';
 
 const PostContainer = styled.div`
   margin: 5vh 0;
@@ -9,14 +10,11 @@ const PostContainer = styled.div`
   }
 `;
 
-const AddPost = styled.textarea`
+const PostContent = styled.textarea`
   border: none;
-  background-color: #f8f9fa;
-  border-radius: 0.5rem;
-  padding: 1.5vh 1vw;
   width: 100%;
   font-size: 0.95rem;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  ${square};
 
   &:focus-visible {
     outline: none;
@@ -31,12 +29,10 @@ const AddButton = styled.button`
   color: #fff;
   margin: 2vh 0;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  cursor: pointer;
-  
+
   &:hover {
-    transform: translateY(-7px);
-    transition: transform 0.4s ease-in-out;
+    ${iconHover};
   }
 `;
 
-export { PostContainer, AddPost, AddButton };
+export { PostContainer, PostContent, AddButton };

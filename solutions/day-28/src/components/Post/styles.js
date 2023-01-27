@@ -1,11 +1,10 @@
 import styled from 'styled-components';
+import { iconHover, square } from '../../styles/globalStyles';
 
 const Container = styled.div`
-  background: #f8f9fa;
-  padding: 1.5vh 1vw;
-  border-radius: 0.5rem;
   margin-bottom: 4vh;
   min-height: 170px;
+  ${square};
 
   .profile-icon {
     font-size: 2.5rem;
@@ -24,10 +23,10 @@ const Row = styled.div`
     font-size: 1.5rem;
     margin-right: 3vw;
   }
-  svg:hover {
-    cursor: pointer;
-    transform: translateY(-3px);
-    transition: transform 0.4s ease-in-out;
+
+  & svg:hover{
+    ${iconHover};
   }
+
 `;
 export { Container, Row };
