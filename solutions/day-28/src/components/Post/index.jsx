@@ -21,7 +21,6 @@ const Post = ({ username, content, onDelete, onEdit, id }) => {
         <p>{content}</p>
       </Row>
       <Row>
-        {/* <Icon>{isLiked ? <HiHeart /> : <HiOutlineHeart />}</Icon> */}
         <Icon>
           <HiOutlineHeart />
         </Icon>

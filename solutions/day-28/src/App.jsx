@@ -15,19 +15,12 @@ const App = () => {
 
   const deletePost = id => {
     setPosts(prevPosts => {
-      return prevPosts.filter((postItem, index) => {
+      return prevPosts.filter((_, index) => {
         return index !== id;
       });
     });
   };
 
-  const editPost = id => {
-    setPosts(prevPosts => {
-      return prevPosts.filter((postItem, index) => {
-        return index !== id;
-      });
-    });
-  };
 
   return (
     <>
@@ -36,14 +29,14 @@ const App = () => {
       <CreatePost onAdd={addPost} />
       {posts.map((postItem, index) => {
         return (
-          <Post
-            key={index}
-            id={index}
-            content={postItem.content}
-            username={postItem.username}
-            onDelete={deletePost}
-            onEdit={editPost}
-          />
+            <Post
+              key={index}
+              id={index}
+              content={postItem.content}
+              username={postItem.username}
+              onDelete={deletePost}
+              onEdit={editPost}
+            />
         );
       })}
     </>
