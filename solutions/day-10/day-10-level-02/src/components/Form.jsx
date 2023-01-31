@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { FaCheckCircle } from 'react-icons/fa';
 
 const Form = () => {
+  const apiKey = import.meta.env.VITE_API_KEY;
   const [email, setEmail] = useState({
     name: '',
     email: '',
@@ -17,7 +18,7 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    emailjs.send('service_tmp127n', 'template_xtuqxuo', email, 'd3t9oBtzvBtCZAKpb').then(
+    emailjs.send('service_tmp127n', 'template_xtuqxuo', email, apiKey).then(
       () => {
         setIsShown(true);
         setEmail({
@@ -46,10 +47,7 @@ const Form = () => {
         <Container className='form-info-container'>
           <h3>Let's talk about everything?</h3>
           <p>
-            Don't like forms? Send me an <a href='mailto:eduardocardoso1039@gmail.com'>
-              email
-            </a>
-            .
+            Don't like forms? Send me an <a href='mailto:eduardocardoso1039@gmail.com'>email</a>.
           </p>
         </Container>
         <Container className='form-container'>
