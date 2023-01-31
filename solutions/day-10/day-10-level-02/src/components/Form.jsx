@@ -46,7 +46,10 @@ const Form = () => {
         <Container className='form-info-container'>
           <h3>Let's talk about everything?</h3>
           <p>
-            Don't like forms? Send me an <span>email</span>.
+            Don't like forms? Send me an <a href='mailto:eduardocardoso1039@gmail.com'>
+              email
+            </a>
+            .
           </p>
         </Container>
         <Container className='form-container'>
@@ -100,8 +103,8 @@ const Form = () => {
   );
 };
 
-export default Form;
-
 const Input = ({ placeholder, type, ...others }) => {
   return <input type={type} placeholder={placeholder} {...others} />;
 };
+
+export default Form;

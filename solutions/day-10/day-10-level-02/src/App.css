@@ -377,7 +377,7 @@ button,
   color: var(--dark-gray);
 }
 .exp-icon {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--yellow);
   margin-right: 1rem;
 }
@@ -388,7 +388,7 @@ button,
 }
 .exp-line {
   height: 100%;
-  width: 1.5px;
+  width: 1.75px;
   background-color: var(--yellow);
   margin: auto;
 }
@@ -410,7 +410,7 @@ button,
 .form-info-container img {
   position: absolute;
 }
-.form-info-container span {
+.form-info-container a {
   color: var(--yellow);
 }
 .form-row {
@@ -532,10 +532,10 @@ button,
   .info-text {
     text-align: center;
   }
-  button{
+  button {
     padding: 1.5vh 4vw;
   }
-  input{
+  input {
     margin-bottom: 2vh;
   }
 

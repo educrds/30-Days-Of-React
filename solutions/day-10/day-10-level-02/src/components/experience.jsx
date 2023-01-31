@@ -1,22 +1,25 @@
 import Container from './Container';
 import { SmallTitle, Title } from './Title';
-import { VscMortarBoard } from 'react-icons/vsc';
+import { SiUdemy, SiUdacity, SiCoursera } from 'react-icons/si';
 
 const experienceList = [
   {
     period: '2023 - January',
     title: 'Front-End',
     description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    brand: <SiUdemy />,
   },
   {
     period: '2023 - January',
     title: 'Front-End',
     description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    brand: <SiUdacity />,
   },
   {
     period: '2023 - January',
     title: 'Front-End',
     description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    brand: <SiCoursera />,
   },
 ];
 
@@ -40,11 +43,11 @@ const Experience = () => {
   );
 };
 
-const ExpInfo = ({ period, title, description }) => {
+const ExpInfo = ({ period, title, description, brand }) => {
   return (
     <div className='exp-container'>
       <div className='exp-icon'>
-        <VscMortarBoard />
+        {brand}
         <div className='exp-line'></div>
       </div>
       <div>
