@@ -26,13 +26,13 @@ const Experience = () => {
       <Title text='Experience' />
       <Container className='experience'>
         <div className='square'>
-          {experienceList.map(({ ...experience }) => (
-            <ExpInfo {...experience} />
+          {experienceList.map(({ ...experience }, index) => (
+            <ExpInfo key={index} {...experience} />
           ))}
         </div>
         <div className='square'>
-          {experienceList.map(({ ...experience }) => (
-            <ExpInfo {...experience} />
+          {experienceList.map(({ ...experience }, index) => (
+            <ExpInfo key={index} {...experience} />
           ))}
         </div>
       </Container>
@@ -45,7 +45,7 @@ const ExpInfo = ({ period, title, description }) => {
     <div className='exp-container'>
       <div className='exp-icon'>
         <VscMortarBoard />
-        <div className="exp-line"></div>
+        <div className='exp-line'></div>
       </div>
       <div>
         <SmallTitle content={period} />

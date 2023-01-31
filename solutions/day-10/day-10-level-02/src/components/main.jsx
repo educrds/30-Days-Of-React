@@ -21,7 +21,9 @@ const Main = () => {
           <Title text='Bob Doe' />
           <SmallTitle content="I'm a Web Development" />
           <ul className='social-icons'>
-            {socialNetworks.map(({ icon }) => <List content={icon} /> )}
+            {socialNetworks.map(({ icon }, index) => (
+              <List key={index} content={icon} />
+            ))}
           </ul>
           <Button className='button' content='Hire me' />
         </Container>

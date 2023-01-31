@@ -75,7 +75,8 @@ textarea::placeholder {
   font-weight: 600;
   color: #cecece;
 }
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible {
   outline: none;
 }
 
