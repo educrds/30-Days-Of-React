@@ -3,6 +3,7 @@ import { Title } from './Title';
 import Button from './Button';
 import Container from './Container';
 import emailjs from '@emailjs/browser';
+import { FaCheckCircle } from 'react-icons/fa';
 
 const Form = () => {
   const [email, setEmail] = useState({
@@ -11,11 +12,26 @@ const Form = () => {
     subject: '',
     message: '',
   });
+  const [isShown, setIsShown] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    emailjs.send('service_tmp127n', 'template_xtuqxuo', email, 'd3t9oBtzvBtCZAKpb');
+    emailjs.send('service_tmp127n', 'template_xtuqxuo', email, 'd3t9oBtzvBtCZAKpb').then(
+      () => {
+        setIsShown(true);
+        setEmail({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+        setTimeout(() => {
+          setIsShown(false);
+        }, 5000);
+      },
+      () => setIsShown(false)
+    );
   };
 
   const handleChange = e => {
@@ -34,6 +50,12 @@ const Form = () => {
           </p>
         </Container>
         <Container className='form-container'>
+          {isShown && (
+            <Container className='send-message'>
+              <FaCheckCircle />
+              <p>Email enviado com sucesso!</p>
+            </Container>
+          )}
           <form onSubmit={handleSubmit}>
             <Container className='form-row'>
               <Input
