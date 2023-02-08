@@ -1,4 +1,4 @@
-import { RiMoonFill, RiSunLine } from 'react-icons/ri';
+import { RiMoonFill, RiNavigationFill, RiSunLine } from 'react-icons/ri';
 import { useState, useEffect } from 'react';
 import { TbMenu2 } from 'react-icons/tb';
 import { Title } from './Title';
@@ -37,8 +37,9 @@ function Navbar() {
       <Container className={`navbar-links ${isOpen && 'open'}`}>
         <ul>
           <List href='/' content='About' />
-          <List href='/' content='Services' />
+          <List href='/' content='Skills' />
           <List href='/' content='Experience' />
+          <List href='/' content='Contact' />
           <List className={'theme-button'} content={icon} onClick={changeTheme} />
         </ul>
       </Container>
@@ -48,5 +49,6 @@ function Navbar() {
     </nav>
   );
 }
+
 
 export default Navbar;

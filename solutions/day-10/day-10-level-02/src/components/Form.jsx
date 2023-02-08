@@ -5,8 +5,9 @@ import Container from './Container';
 import emailjs from '@emailjs/browser';
 import { FaCheckCircle } from 'react-icons/fa';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 const Form = () => {
-  const apiKey = import.meta.env.VITE_API_KEY;
   const [email, setEmail] = useState({
     name: '',
     email: '',
@@ -59,34 +60,15 @@ const Form = () => {
           )}
           <form onSubmit={handleSubmit}>
             <Container className='form-row'>
-              <Input
-                type='text'
-                name='name'
-                placeholder='Your name'
-                onChange={handleChange}
-                value={email.name}
-              />
-              <Input
-                type='text'
-                name='email'
-                placeholder='Email address'
-                onChange={handleChange}
-                value={email.email}
-              />
+              <Input name='name' placeholder='Your name' onChange={handleChange} value={email.name} />
+              <Input name='email' placeholder='Email address' onChange={handleChange} value={email.email} />
             </Container>
             <Container>
-              <Input
-                type='text'
-                name='subject'
-                placeholder='Subject'
-                onChange={handleChange}
-                value={email.subject}
-              />
+              <Input name='subject' placeholder='Subject' onChange={handleChange} value={email.subject} />
             </Container>
             <Container>
               <textarea
                 rows='3'
-                type='text'
                 name='message'
                 placeholder='Message'
                 onChange={handleChange}
@@ -101,8 +83,6 @@ const Form = () => {
   );
 };
 
-const Input = ({ placeholder, type, ...others }) => {
-  return <input type={type} placeholder={placeholder} {...others} />;
-};
+const Input = ({ placeholder, type, ...others }) => <input type='text' placeholder={placeholder} {...others} />;
 
 export default Form;

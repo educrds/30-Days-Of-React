@@ -2,7 +2,7 @@
 
 .light {
   --bg-color: #f9f9ff;
-  --font-color: rgb(100, 100, 100);
+  --font-color: #333;
   --dark-gray: #333;
   --light-gray: #808080;
   --white: #fff;
@@ -60,6 +60,7 @@ section {
 section > h1 {
   margin: 4vh 0;
   font-size: 2rem;
+  color: var(--font-color);
 }
 
 input {
@@ -231,7 +232,8 @@ button,
 }
 
 .services,
-.experience {
+.experience,
+.projects {
   display: flex;
   gap: 2rem;
 }
@@ -256,39 +258,58 @@ button,
 }
 /* Projects */
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: space-between;
-  justify-items: center;
+.projects {
+  flex-wrap: wrap;
+  color: #333;
 }
 
-.element {
+.projects .square {
+  flex: 1 0 calc(100 / 3);
+  padding: 5vh 2.5vw;
+}
+
+.projects .title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
 }
 
-.element span {
-  font-size: 2rem;
+.projects .title > svg {
+  font-size: 1.75rem;
 }
 
-.text-container {
+.projects .technologies {
   display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-  width: 100%;
+  gap: 0.35rem;
+  margin: 1vh 0 2.5vh;
+}
+.projects .technologies .item {
+  background-color: #5ed3f3;
+  padding: 0 1vw;
+  border-radius: 2rem;
 }
 
-.text-title {
-  line-height: 2rem;
-  font-size: 2rem;
-  font-weight: bold;
+.projects .description p {
+  margin-bottom: 4vh;
 }
 
-.text-subtitle {
-  font-size: 1.1rem;
+.projects .description p,
+.projects .links {
+  text-align: left;
 }
+
+.projects .links {
+  display: flex;
+  font-size: 1.35rem;
+  gap: 1rem;
+  transition-delay: 0.5s;
+}
+
+.projects .links a {
+  color: #333;
+}
+/* Tech Skills */
 
 .tech-item svg {
   font-size: 4rem;
@@ -405,7 +426,7 @@ button,
 .form-info-container {
   flex: 1;
   position: relative;
-  color: var(--light-gray);
+  color: var(--font-color);
 }
 .form-info-container img {
   position: absolute;
@@ -535,6 +556,7 @@ button,
   }
   button {
     padding: 1.5vh 4vw;
+    cursor: pointer;
   }
   input {
     margin-bottom: 2vh;
