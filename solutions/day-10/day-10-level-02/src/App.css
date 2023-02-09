@@ -264,7 +264,7 @@ button,
 }
 
 .projects .square {
-  flex: 1 0 calc(100 / 3);
+  flex: 1 0 30%;
   padding: 5vh 2.5vw;
 }
 
@@ -285,9 +285,10 @@ button,
   margin: 1vh 0 2.5vh;
 }
 .projects .technologies .item {
-  background-color: #5ed3f3;
+  background-color: var(--yellow);
   padding: 0 1vw;
   border-radius: 2rem;
+  white-space: nowrap;
 }
 
 .projects .description p {
@@ -572,6 +573,13 @@ button,
   .form-row {
     flex-direction: column;
   }
+  .projects .square {
+    flex: 1 0 100%;
+    padding: 4vh 4vw;
+  }
+  .projects .technologies .item {
+    padding: 0 3vw;
+  }
 }
 
 @media (min-width: 635px) and (max-width: 870px) {
@@ -588,5 +596,10 @@ button,
   }
   .tech-item {
     flex: 1 0 calc(100% / 4);
+  }
+}
+@media (min-width: 635px) and (max-width: 1167px) {
+  .projects .square {
+    flex: 1 0 40%;
   }
 }

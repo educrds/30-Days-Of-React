@@ -1,4 +1,6 @@
-import { FaSun, FaLink, FaGithub, FaRocketchat, FaCalculator } from 'react-icons/fa';
+import { FaSun, FaLink, FaGithub, FaRocketchat, FaCalculator, FaGamepad } from 'react-icons/fa';
+import { RiNetflixFill } from 'react-icons/ri';
+import { GiSnakeTongue } from 'react-icons/gi';
 import Container from './Container';
 import { SmallTitle, Title } from './Title';
 
@@ -9,8 +11,9 @@ const projects = [
     icon: <FaRocketchat />,
     techList: ['Node', 'Socket.io'],
     links: {
-      github: 'https://github.com/educrds/react-weather-app',
-      project: 'https://educrds.github.io/Weather-Project/',
+      github:
+        'https://github.com/educrds/The-Complete-Node.js-Developer-Course/tree/master/chat-app',
+      project: 'http://node-chat-app.herokuapp.com/',
     },
   },
   {
@@ -20,7 +23,7 @@ const projects = [
     icon: <FaSun />,
     techList: ['React', 'Styled components'],
     links: {
-      github: 'https://github.com/educrds/react-weather-app',
+      github: 'https://github.com/educrds/Weather-Project',
       project: 'https://educrds.github.io/Weather-Project/',
     },
   },
@@ -30,8 +33,41 @@ const projects = [
     icon: <FaCalculator />,
     techList: ['React'],
     links: {
-      github: 'https://github.com/educrds/react-weather-app',
-      project: 'https://educrds.github.io/Weather-Project/',
+      github: 'https://github.com/educrds/Calculator',
+      project: 'https://educrds.github.io/Calculator/',
+    },
+  },
+  {
+    title: 'Netflix',
+    description:
+      'Clone da Netflix com HTML, CSS e JS, usando a API MovieDB para buscar informações para exibição.',
+    icon: <RiNetflixFill />,
+    techList: ['MovieDB', 'JS'],
+    links: {
+      github: 'https://github.com/educrds/netflix-clone',
+      project: 'https://educrds.github.io/netflix-clone/',
+    },
+  },
+  {
+    title: 'BeZoo',
+    description:
+      'Projeto de uma landing page de um Zoológico feita para o projeto final do Bootcamp beAcademy.',
+    icon: <GiSnakeTongue />,
+    techList: ['Bootstrap', 'JS'],
+    links: {
+      github: 'https://github.com/educrds/BeAcademy-Final-Project',
+      project: 'https://educrds.github.io/BeAcademy-Final-Project/',
+    },
+  },
+  {
+    title: 'Hangman Game',
+    description:
+      'Jogo da Forca recriado com JS, HTML, CSS e Bootstrap. Dê adeus ao chato e experimente essa nova versão.',
+    icon: <FaGamepad />,
+    techList: ['Bootstrap', 'JS'],
+    links: {
+      github: 'https://github.com/educrds/HangMan-Game',
+      project: 'https://educrds.github.io/HangMan-Game/',
     },
   },
 ];
