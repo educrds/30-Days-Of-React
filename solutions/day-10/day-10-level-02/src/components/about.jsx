@@ -24,7 +24,7 @@ const About = () => {
         <Title text='About me' />
         <Container className='about'>
           <Container className='about-photo'>
-            <Photo className='profile-photo' href='/src/assets/imgs/peeps-avatar.png' />
+            <Photo className='profile-photo' />
           </Container>
           <Container className='info-card'>
             <Container className='info-text'>

@@ -1,3 +1,5 @@
-const Photo = ({ href, className }) => <img className={className} src={href} />;
+const Photo = ({ className }) => (
+  <img className={className} src='/src/assets/imgs/foto-perfil.png' />
+);
 
-export default Photo
+export default Photo;

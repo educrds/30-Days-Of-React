@@ -12,7 +12,7 @@ const Main = () => {
     <section>
       <Container className='main'>
         <Container className='avatar'>
-          <Photo className='profile-photo' href='/src/assets/imgs/peeps-avatar.png' />
+          <Photo className='profile-photo' />
           <Title text='Bob Doe' />
           <SmallTitle content="I'm a Web Development" />
           <SocialIcons />

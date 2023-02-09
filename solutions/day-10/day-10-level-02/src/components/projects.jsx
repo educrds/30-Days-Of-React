@@ -96,7 +96,7 @@ const Item = () => {
           <a href={project.links.github} target='_blank'>
             <FaGithub />
           </a>
-          <a href={project.links.project}>
+          <a href={project.links.project} target='_blank'>
             <FaLink />
           </a>
         </div>
