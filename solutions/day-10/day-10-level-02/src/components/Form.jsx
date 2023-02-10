@@ -1,11 +1,11 @@
+import { motion, useInView } from 'framer-motion';
+import { FaCheckCircle } from 'react-icons/fa';
 import { useState } from 'react';
+import { useRef } from 'react';
 import { Title } from './Title';
 import Button from './Button';
 import Container from './Container';
 import emailjs from '@emailjs/browser';
-import { FaCheckCircle } from 'react-icons/fa';
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -27,12 +27,7 @@ const Form = () => {
     emailjs.send('service_tmp127n', 'template_xtuqxuo', email, apiKey).then(
       () => {
         setIsShown(true);
-        setEmail({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
+        setEmail({ name: '',email: '',subject: '',message: '' });
         setTimeout(() => {
           setIsShown(false);
         }, 5000);
@@ -72,34 +67,14 @@ const Form = () => {
           )}
           <form onSubmit={handleSubmit}>
             <Container className='form-row'>
-              <Input
-                name='name'
-                placeholder='Your name'
-                onChange={handleChange}
-                value={email.name}
-              />
-              <Input
-                name='email'
-                placeholder='Email address'
-                onChange={handleChange}
-                value={email.email}
-              />
+              <Input name='name' placeholder='Your name' onChange={handleChange} value={email.name} />
+              <Input name='email' placeholder='Email address' onChange={handleChange} value={email.email} />
             </Container>
             <Container>
-              <Input
-                name='subject'
-                placeholder='Subject'
-                onChange={handleChange}
-                value={email.subject}
-              />
+              <Input name='subject' placeholder='Subject' onChange={handleChange} value={email.subject} />
             </Container>
             <Container>
-              <textarea
-                rows='3'
-                name='message'
-                placeholder='Message'
-                onChange={handleChange}
-                value={email.message}
+              <textarea rows='3' name='message' placeholder='Message' onChange={handleChange} value={email.message}
               ></textarea>
             </Container>
             <Button content='Send message' />

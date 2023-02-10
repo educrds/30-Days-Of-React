@@ -8,31 +8,31 @@ const experienceList = [
   {
     period: 'Janeiro - 2023',
     title: 'The Complete Node.js Developer Course',
-    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    resources: ['Node', 'Express', 'Mongoose', 'Socket.IO', 'REST API'],
     brand: <SiUdemy />,
   },
   {
     period: 'Novembro - 2022',
     title: 'Orange Tech +',
-    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    resources: ['React', 'Typescript'],
     brand: <SiUdacity />,
   },
   {
     period: 'Outubro - 2022',
     title: 'The Complete 2022 Web Development Bootcamp',
-    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    resources: ['React', 'Node', 'Express', 'SQL', 'Mongoose', 'Bootstrap'],
     brand: <SiUdemy />,
   },
   {
     period: 'Outubro - 2022',
     title: 'Google UX Design',
-    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    resources: ['UI/UX designer', 'Interaction designer', 'Visual designer', 'Product designer'],
     brand: <SiCoursera />,
   },
   {
     period: 'Outubro - 2022',
     title: 'The Complete SQL Bootcamp 2022: Go from Zero to Hero',
-    description: 'Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.',
+    resources: ['SQL', 'PostgreSQL'],
     brand: <SiUdemy />,
   },
 ];
@@ -67,7 +67,7 @@ const Experience = () => {
   );
 };
 
-const ExpInfo = ({ period, title, description, brand }) => {
+const ExpInfo = ({ period, title, resources, brand }) => {
   return (
     <div className='exp-container'>
       <div className='exp-icon'>
@@ -77,7 +77,15 @@ const ExpInfo = ({ period, title, description, brand }) => {
       <div>
         <SmallTitle content={period} />
         <Title text={title} />
-        <SmallTitle content={description} />
+        <div className='technologies'>
+          {resources.map((resource, i) => {
+            return (
+              <div className='item' key={i}>
+                <SmallTitle content={resource} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

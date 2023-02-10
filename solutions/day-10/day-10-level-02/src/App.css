@@ -279,12 +279,13 @@ button,
   font-size: 1.75rem;
 }
 
-.projects .technologies {
+.technologies {
   display: flex;
   gap: 0.35rem;
   margin: 1vh 0 2.5vh;
+  flex-wrap: wrap;
 }
-.projects .technologies .item {
+.item {
   background-color: var(--yellow);
   padding: 0 1vw;
   border-radius: 2rem;
