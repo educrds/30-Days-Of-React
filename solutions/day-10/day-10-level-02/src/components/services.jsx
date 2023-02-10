@@ -1,6 +1,8 @@
 import Container from './Container';
 import Square from './Square';
 import { Title } from './Title';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const servicesList = [
   {
@@ -21,13 +23,25 @@ const servicesList = [
 ];
 
 const Services = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section>
+    <motion.section
+      ref={ref}
+      style={{
+        transform: isInView ? 'none' : 'translateX(200px)',
+        opacity: isInView ? 1 : 0,
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+      }}
+    >
       <Title text='Services' />
       <Container className='services'>
-        {servicesList.map(({ ...service }) => <Square key={service.title} {...service} /> )}
+        {servicesList.map(({ ...service }) => (
+          <Square key={service.title} {...service} />
+        ))}
       </Container>
-    </section>
+    </motion.section>
   );
 };
 

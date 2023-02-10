@@ -2,6 +2,8 @@ import { Title, SmallTitle } from './Title';
 import Photo from './Photo';
 import Button from './Button';
 import Container from './Container';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const ProgressBar = ({ content, percentage, width }) => {
   return (
@@ -18,9 +20,19 @@ const ProgressBar = ({ content, percentage, width }) => {
 };
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <>
-      <section>
+      <motion.section
+        ref={ref}
+        style={{
+          transform: isInView ? 'none' : 'translateX(-200px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+        }}
+      >
         <Title text='About me' />
         <Container className='about'>
           <Container className='about-photo'>
@@ -39,7 +51,7 @@ const About = () => {
             </Container>
           </Container>
         </Container>
-      </section>
+      </motion.section>
     </>
   );
 };

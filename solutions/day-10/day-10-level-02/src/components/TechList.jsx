@@ -11,6 +11,8 @@ import {
   DiBootstrap,
 } from 'react-icons/di';
 import Container from './Container';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const techList = [
   { techName: 'Javascript', techIcon: <DiJavascript /> },
@@ -23,9 +25,19 @@ const techList = [
   { techName: 'React', techIcon: <DiReact /> },
 ];
 
-const TechList = () => {
+const TechSkills = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section>
+    <motion.section
+      ref={ref}
+      style={{
+        transform: isInView ? 'none' : 'translateX(200px)',
+        opacity: isInView ? 1 : 0,
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+      }}
+    >
       <Title text='Tech Skills' />
       <Container className='tech-list'>
         {techList.map(({ techName, techIcon }) => (
@@ -35,8 +47,8 @@ const TechList = () => {
           </Container>
         ))}
       </Container>
-    </section>
+    </motion.section>
   );
 };
 
-export default TechList;
+export default TechSkills;

@@ -1,4 +1,4 @@
-const Title = ({ text }) => <h1>{text}</h1>;
-const SmallTitle = ({ content }) => <p>{content}</p>;
+const Title = ({ text, ...others }) => <h1 {...others}>{text}</h1>;
+const SmallTitle = ({ content, ...others }) => <p {...others}>{content}</p>;
 
 export { Title, SmallTitle };

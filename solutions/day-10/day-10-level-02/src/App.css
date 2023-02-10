@@ -55,7 +55,7 @@ h1 {
   font-weight: bold;
 }
 section {
-  margin: 16vh 0;
+  margin: 20vh 0;
 }
 section > h1 {
   margin: 4vh 0;
@@ -393,6 +393,7 @@ button,
   text-align: left;
   display: flex;
   flex-direction: column;
+  height: fit-content;
   justify-content: space-between;
 }
 .exp-container p:nth-child(1) {
@@ -410,7 +411,7 @@ button,
 }
 .exp-line {
   height: 100%;
-  width: 1.75px;
+  width: 2px;
   background-color: var(--yellow);
   margin: auto;
 }

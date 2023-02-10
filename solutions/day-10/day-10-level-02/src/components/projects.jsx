@@ -1,8 +1,9 @@
 import { FaSun, FaLink, FaGithub, FaRocketchat, FaCalculator, FaGamepad } from 'react-icons/fa';
 import { RiNetflixFill } from 'react-icons/ri';
 import { GiSnakeTongue } from 'react-icons/gi';
-import Container from './Container';
 import { SmallTitle, Title } from './Title';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const projects = [
   {
@@ -106,13 +107,23 @@ const Item = () => {
 };
 
 const Projects = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section>
+    <motion.section
+      ref={ref}
+      style={{
+        transform: isInView ? 'none' : 'translateX(-200px)',
+        opacity: isInView ? 1 : 0,
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+      }}
+    >
       <Title text='Projects' />
-      <Container className='projects'>
+      <div className='projects'>
         <Item />
-      </Container>
-    </section>
+      </div>
+    </motion.section>
   );
 };
 
