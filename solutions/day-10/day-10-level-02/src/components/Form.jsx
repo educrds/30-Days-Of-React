@@ -51,16 +51,16 @@ const Form = () => {
       }}
     >
       <Title text='Get In Touch' />
-      <Container className='contact-container'>
-        <Container className='form-info-container'>
+      <Container className='contact'>
+        <Container>
           <h3>Let's talk about everything?</h3>
           <p>
             Don't like forms? Send me an <a href='mailto:eduardocardoso1039@gmail.com'>email</a>.
           </p>
         </Container>
-        <Container className='form-container'>
+        <Container className='form'>
           {isShown && (
-            <Container className='send-message'>
+            <Container>
               <FaCheckCircle />
               <p>Email enviado com sucesso!</p>
             </Container>
