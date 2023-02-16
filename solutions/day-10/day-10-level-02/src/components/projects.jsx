@@ -76,7 +76,7 @@ const projects = [
 const Item = () => {
   return projects.map((project, i) => {
     return (
-      <div key={i} className='square projects-info'>
+      <div key={i}>
         <div className='title'>
           {project.icon}
           <Title text={project.title} />
