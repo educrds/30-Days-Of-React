@@ -9,15 +9,15 @@ import ProgressBar from './ProgressBar';
 const skillsPercentage = [
   {
     content: 'Front-End',
-    percentage: '85%',
+    percentage: 85,
   },
   {
     content: 'UX/UI Design',
-    percentage: '45%',
+    percentage: 45,
   },
   {
     content: 'Back-End',
-    percentage: '35%',
+    percentage: 35,
   },
 ];
 
@@ -48,7 +48,7 @@ const About = () => {
             </Container>
             <Container className='skills'>
               {skillsPercentage.map(({ content, percentage }, i) => (
-                <ProgressBar key={i} content={content} percentage={percentage} width={percentage} />
+                <ProgressBar key={i} content={content} percentage={percentage} />
               ))}
             </Container>
           </Container>
