@@ -4,7 +4,7 @@ import { SmallTitle, Title } from './Title';
 const Square = ({ title, content, image }) => {
   return (
     <>
-      <Container className='square'>
+      <Container>
         <img src={image} />
         <Title text={title} />
         <SmallTitle content={content} />
