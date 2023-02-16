@@ -12,7 +12,7 @@ const Main = () => {
   return (
     <section>
       <motion.div
-        className='main'
+        className='mainCard'
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -28,12 +28,12 @@ const Main = () => {
           },
         }}
       >
-        <Container className='avatar'>
-          <Photo className='profile-photo ' />
+        <Container>
+          <Photo />
           <Title text='Bob Doe' />
           <SmallTitle content="I'm a Web Development" />
           <SocialIcons />
-          <Button className='button' content='Hire me' />
+          <Button content='Hire me' />
         </Container>
       </motion.div>
     </section>
@@ -42,7 +42,7 @@ const Main = () => {
 
 const SocialIcons = () => {
   return (
-    <ul className='social-icons '>
+    <ul>
       {socialNetworks.map((icon, index) => (
         <List key={index} content={icon} />
       ))}
