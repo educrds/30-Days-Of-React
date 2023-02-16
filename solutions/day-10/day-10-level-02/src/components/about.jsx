@@ -4,20 +4,22 @@ import Button from './Button';
 import Container from './Container';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import ProgressBar from './ProgressBar';
 
-const ProgressBar = ({ content, percentage, width }) => {
-  return (
-    <Container>
-      <Container className='skills-description'>
-        <h4> {content}</h4>
-        <h4>{percentage}</h4>
-      </Container>
-      <Container className='progress-bar'>
-        <div className='bar' style={{ width }}></div>
-      </Container>
-    </Container>
-  );
-};
+const skillsPercentage = [
+  {
+    content: 'Front-End',
+    percentage: '85%',
+  },
+  {
+    content: 'UX/UI Design',
+    percentage: '45%',
+  },
+  {
+    content: 'Back-End',
+    percentage: '35%',
+  },
+];
 
 const About = () => {
   const ref = useRef(null);
@@ -35,19 +37,19 @@ const About = () => {
       >
         <Title text='About me' />
         <Container className='about'>
-          <Container className='about-photo'>
-            <Photo className='profile-photo' />
+          <Container className='photo'>
+            <Photo />
           </Container>
-          <Container className='info-card'>
-            <Container className='info-text'>
+          <Container className='summary'>
+            <Container className='about-text'>
               <SmallTitle content='I am Bob Doe, web developer from Brazil, South America. I have rich experience in web site design and building and customization, also I am good at WordPress.' />
 
-              <Button className='button' content='Download CV' />
+              <Button content='Download CV' />
             </Container>
             <Container className='skills'>
-              <ProgressBar content='Front-End' percentage='85%' width='85%' />
-              <ProgressBar content='UX/UI Design' percentage='55%' width='55%' />
-              <ProgressBar content='Back-End' percentage='35%' width='35%' />
+              {skillsPercentage.map(({ content, percentage }) => (
+                <ProgressBar content={content} percentage={percentage} width={percentage} />
+              ))}
             </Container>
           </Container>
         </Container>

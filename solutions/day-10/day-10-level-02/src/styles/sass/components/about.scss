@@ -1,0 +1,74 @@
+@import '../mixins/mixins.scss';
+
+@mixin setupArrowChatBallon {
+  border: 0.75em solid transparent;
+  border-left: none;
+  border-right-color: var(--white);
+}
+
+.about {
+  display: flex;
+  color: var(--dark-gray);
+  .photo {
+    flex: 1;
+    img {
+      @include setupProfilePhoto;
+    }
+  }
+  .summary {
+    flex: 4;
+    background-color: var(--white);
+    border-radius: 1.3rem;
+    padding: 3vh 3vw;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    display: flex;
+    position: relative;
+  }
+  & ::after {
+    @include setupArrowChatBallon;
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    right: 100%;
+    top: 50px;
+    filter: drop-shadow(rgba(212, 18, 18, 0.05) 0px 1px 2px 0px);
+  }
+  .about-text {
+    p {
+      padding-right: 1.5vw;
+    }
+    button {
+      margin: 3vh 0;
+    }
+  }
+  .about-text,
+  .skills {
+    flex: 1;
+  }
+}
+
+@media (max-width: 630px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    row-gap: 2vh;
+    .summary {
+      flex-direction: column;
+      row-gap: 2vh;
+    }
+    & ::after {
+      content: '';
+      bottom: 100%;
+      left: 180px;
+      top: -10px;
+      border: 0.75rem solid transparent;
+      border-top: none;
+      border-bottom-color: var(--white);
+    }
+    .about-text {
+      text-align: center;
+    }
+  }
+}
