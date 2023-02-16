@@ -1,0 +1,27 @@
+@mixin bar {
+  height: 8px;
+  border-radius: 30px;
+}
+.progress-bar {
+  width: 100%;
+  background-color: #f1f1f1;
+  margin: 1.4vh 0;
+  @include bar;
+
+  .bar {
+    @include bar;
+    background-color: var(--yellow);
+    color: var(--dark-gray);
+  }
+}
+
+.skills-text {
+  display: flex;
+
+  h4 {
+    + h4 {
+      margin-left: auto;
+      font-weight: 200;
+    }
+  }
+}
