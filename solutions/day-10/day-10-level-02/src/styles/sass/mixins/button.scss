@@ -1,17 +1,1 @@
-button {
-  padding: 1.5vh 2.5vw;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 0.935rem;
-  border: none;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
-  color: var(--dark-gray);
-  background-color: var(--yellow);
-  color: var(--dark-gray);
 
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}

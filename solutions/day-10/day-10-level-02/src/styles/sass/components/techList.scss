@@ -1,7 +1,10 @@
 .tech-list {
   display: flex;
   flex-wrap: wrap;
-  background-color: var(--white);
+  @include themify($themes) {
+    background-color: themed('whiteColor');
+  }
+  color: #333;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
   border-radius: 1.3rem;
   padding: 3vh 3vw;

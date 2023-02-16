@@ -1,33 +1,21 @@
-import { RiMoonFill, RiNavigationFill, RiSunLine } from 'react-icons/ri';
-import { useState, useEffect } from 'react';
+import { RiMoonFill, RiSunLine } from 'react-icons/ri';
+import { useState, useContext } from 'react';
 import { TbMenu2 } from 'react-icons/tb';
 import { Title } from './Title';
 import Container from './Container';
 import List from './List';
+import { ThemeContext } from '../contexts/theme-context';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [{ theme, icon }, setMode] = useState({
-    theme: 'light',
-    icon: <RiMoonFill />,
-  });
+  const { theme, setTheme } = useContext(ThemeContext);
 
-  const changeTheme = () => {
-    theme === 'light'
-      ? setMode({
-          theme: 'dark',
-          icon: <RiSunLine />,
-        })
-      : setMode({
-          theme: 'light',
-          icon: <RiMoonFill />,
-        });
+  const handleThemeChange = () => {
+    const isCurrentDark = theme === 'dark';
+    setTheme(isCurrentDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isCurrentDark ? 'light' : 'dark');
   };
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [icon]);
 
   return (
     <nav>
@@ -40,7 +28,7 @@ function Navbar() {
           <List href='/' content='Skills' />
           <List href='/' content='Experience' />
           <List href='/' content='Contact' />
-          <List className={'toggle-button'} content={icon} onClick={changeTheme} />
+          <List className={'toggle-button'} content={<RiSunLine />} onClick={handleThemeChange} />
         </ul>
       </Container>
       <Container className='navbar-toggle' onClick={() => setIsOpen(!isOpen)}>
@@ -49,6 +37,5 @@ function Navbar() {
     </nav>
   );
 }
-
 
 export default Navbar;

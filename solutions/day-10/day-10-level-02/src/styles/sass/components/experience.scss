@@ -4,6 +4,7 @@
 .experience {
   display: flex;
   gap: 2rem;
+  color: #333;
 
   .square {
     @include square;
@@ -21,7 +22,7 @@
     overflow: hidden;
     .icon {
       font-size: 1.6rem;
-      color: var(--yellow);
+      color: #ffd15c;
       margin-right: 1rem;
       svg {
         margin-bottom: 0.5rem;
@@ -30,13 +31,13 @@
     .line {
       height: 100%;
       width: 2px;
-      background-color: var(--yellow);
+      background: #ffd15c;
       margin: auto;
     }
     .infos {
       @include tag;
       > p {
-        color: var(--dark-gray);
+        color: #808080;
       }
     }
   }

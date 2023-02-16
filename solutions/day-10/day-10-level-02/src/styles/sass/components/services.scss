@@ -3,6 +3,7 @@
 .services {
   display: flex;
   gap: 2rem;
+  color: #333;
 
   div {
     @include square;

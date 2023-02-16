@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview",
-    "purgecss": "purgecss --css src/App.css --content /index.html src/components/*.jsx --output src/NewApp.css"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",

@@ -47,8 +47,8 @@ const About = () => {
               <Button content='Download CV' />
             </Container>
             <Container className='skills'>
-              {skillsPercentage.map(({ content, percentage }) => (
-                <ProgressBar content={content} percentage={percentage} width={percentage} />
+              {skillsPercentage.map(({ content, percentage }, i) => (
+                <ProgressBar key={i} content={content} percentage={percentage} width={percentage} />
               ))}
             </Container>
           </Container>

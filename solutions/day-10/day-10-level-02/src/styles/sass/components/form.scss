@@ -2,9 +2,12 @@
   > div {
     flex: 1;
     position: relative;
-    color: var(--font-color);
+    @include themify($themes) {
+      color: themed('fontColor');
+    }
+
     a {
-      color: var(--yellow);
+      color: #ffd15c;
     }
   }
   .form {

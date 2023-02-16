@@ -5,7 +5,10 @@
     flex-wrap: wrap;
     display: flex;
     .item {
-      background-color: var(--yellow);
+      @include themify($themes) {
+        background-color: themed('yellowColor');
+      }
+
       padding: 0 1vw;
       border-radius: 2rem;
       white-space: nowrap;
