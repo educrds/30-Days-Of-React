@@ -6,6 +6,9 @@
 
   div {
     @include square;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 @media (max-width: 630px) {

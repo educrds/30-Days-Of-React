@@ -24,6 +24,9 @@
         text-align: left;
       }
     }
+    &:hover {
+      transform: scale(1.1);
+    }
   }
   .links {
     font-size: 1.35rem;

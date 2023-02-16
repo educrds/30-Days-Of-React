@@ -408,6 +408,9 @@ nav {
   margin-bottom: 4vh;
   text-align: left;
 }
+.projects > div:hover {
+  transform: scale(1.1);
+}
 .projects .links {
   font-size: 1.35rem;
   gap: 1rem;
@@ -449,6 +452,9 @@ nav {
   padding: 5vh 2.5vw;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.services div:hover {
+  transform: scale(1.1);
+}
 
 @media (max-width: 630px) {
   .services {
@@ -471,6 +477,9 @@ nav {
   flex-direction: column;
   height: fit-content;
   row-gap: 10px;
+}
+.experience .square:hover {
+  transform: scale(1.05);
 }
 .experience .column {
   display: flex;

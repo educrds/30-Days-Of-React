@@ -12,6 +12,9 @@
     flex-direction: column;
     height: fit-content;
     row-gap: 10px;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
   .column {
     display: flex;
