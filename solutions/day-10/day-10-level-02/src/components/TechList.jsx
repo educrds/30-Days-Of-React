@@ -41,7 +41,7 @@ const TechSkills = () => {
       <Title text='Tech Skills' />
       <Container className='tech-list'>
         {techList.map(({ techName, techIcon }) => (
-          <Container key={techName} className={`tech-item ${techName}`}>
+          <Container key={techName} className={`${techName}`}>
             {techIcon}
             <p>{techName}</p>
           </Container>

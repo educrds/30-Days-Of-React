@@ -1,6 +1,5 @@
 .tech-list {
   display: flex;
-
   flex-wrap: wrap;
   background-color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
@@ -8,16 +7,75 @@
   padding: 3vh 3vw;
   row-gap: 3vh;
 
-  .tech-item {
+  div {
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
-    flex: 1px;
+
+    svg {
+      font-size: 4rem;
+    }
 
     p {
       font-size: 1.1rem;
       font-weight: bold;
       color: var(--dark-gray);
+    }
+  }
+  .Javascript {
+    svg {
+      color: #f7d800;
+    }
+  }
+  .CSS {
+    svg {
+      color: #006cb4;
+    }
+  }
+  .HTML {
+    svg {
+      color: #f75421;
+    }
+  }
+  .Bootstrap {
+    svg {
+      color: #5b397b;
+    }
+  }
+  .NodeJS {
+    svg {
+      color: #6aa25a;
+    }
+  }
+  .Github {
+    svg {
+      color: #0d2534;
+    }
+  }
+  .MySQL {
+    svg {
+      color: #00718b;
+    }
+  }
+  .React {
+    svg {
+      color: #5ed3f3;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .tech-list {
+    div {
+      flex: 1 0 50%;
+    }
+  }
+}
+@media (min-width: 635px) and (max-width: 870px) {
+  .tech-list {
+    div {
+      flex: 1 0 calc(100% / 4);
     }
   }
 }
