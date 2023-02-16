@@ -31,6 +31,7 @@ const TechSkills = () => {
 
   return (
     <motion.section
+    id='skills-section'
       ref={ref}
       style={{
         transform: isInView ? 'none' : 'translateX(200px)',

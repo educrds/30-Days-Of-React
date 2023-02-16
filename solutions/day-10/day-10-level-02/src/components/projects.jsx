@@ -112,6 +112,7 @@ const Projects = () => {
 
   return (
     <motion.section
+      id='projects-section'
       ref={ref}
       style={{
         transform: isInView ? 'none' : 'translateX(-200px)',

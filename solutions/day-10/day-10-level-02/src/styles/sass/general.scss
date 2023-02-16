@@ -7,6 +7,10 @@
   transition: background-color 0.03s ease-in-out, color 0.03s ease-in-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   @include themify($themes) {
     color: themed('fontColor');
@@ -18,7 +22,6 @@
   max-width: 1650px;
   margin: 0 auto;
   padding: 2vh 6vw;
-
 }
 
 ul {

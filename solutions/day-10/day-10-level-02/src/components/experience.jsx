@@ -43,6 +43,7 @@ const Experience = () => {
 
   return (
     <motion.section
+      id='experience-section'
       ref={ref}
       style={{
         transform: isInView ? 'none' : 'translateX(-200px)',
@@ -77,15 +78,15 @@ const ExpInfo = ({ period, title, resources, brand }) => {
       <div className='infos'>
         <SmallTitle content={period} />
         <Title text={title} />
-          <div className='technologies'>
-            {resources.map((resource, i) => {
-              return (
-                <div className='item' key={i}>
-                  <SmallTitle content={resource} />
-                </div>
-              );
-            })}
-          </div>
+        <div className='technologies'>
+          {resources.map((resource, i) => {
+            return (
+              <div className='item' key={i}>
+                <SmallTitle content={resource} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

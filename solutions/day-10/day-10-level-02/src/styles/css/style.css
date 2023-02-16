@@ -5,6 +5,10 @@
   transition: background-color 0.03s ease-in-out, color 0.03s ease-in-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;

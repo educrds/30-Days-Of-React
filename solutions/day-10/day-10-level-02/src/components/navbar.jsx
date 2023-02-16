@@ -24,11 +24,16 @@ function Navbar() {
       </Container>
       <Container className={`navbar-links ${isOpen && 'open'}`}>
         <ul>
-          <List href='/' content='About' />
-          <List href='/' content='Skills' />
-          <List href='/' content='Experience' />
-          <List href='/' content='Contact' />
-          <List className={'toggle-button'} content={<RiSunLine />} onClick={handleThemeChange} />
+          <List href='#about-section' content='About' />
+          <List href='#skills-section' content='Skills' />
+          <List href='#projects-section' content='Projects' />
+          <List href='#experience-section' content='Experience' />
+          <List href='#contact-section' content='Contact' />
+          <List
+            className='toggle-button'
+            content={theme === 'dark' ? <RiSunLine /> : <RiMoonFill />}
+            onClick={handleThemeChange}
+          />
         </ul>
       </Container>
       <Container className='navbar-toggle' onClick={() => setIsOpen(!isOpen)}>

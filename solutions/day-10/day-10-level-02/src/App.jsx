@@ -6,7 +6,7 @@ import Projects from './components/Projects';
 import Services from './components/Services';
 import Experience from './components/Experience';
 import TechList from './components/TechList';
-import Form from './components/Form';
+import Contact from './components/Contact';
 import { ThemeContext } from './contexts/theme-context';
 import { useState } from 'react';
 
@@ -24,7 +24,7 @@ const App = () => {
           <Projects />
           <Services />
           <Experience />
-          <Form />
+          <Contact />
         </div>
       </div>
     </ThemeContext.Provider>

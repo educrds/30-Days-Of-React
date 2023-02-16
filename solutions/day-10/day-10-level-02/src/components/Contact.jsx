@@ -9,7 +9,7 @@ import emailjs from '@emailjs/browser';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
-const Form = () => {
+const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -27,7 +27,7 @@ const Form = () => {
     emailjs.send('service_tmp127n', 'template_xtuqxuo', email, apiKey).then(
       () => {
         setIsShown(true);
-        setEmail({ name: '',email: '',subject: '',message: '' });
+        setEmail({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => {
           setIsShown(false);
         }, 5000);
@@ -43,6 +43,7 @@ const Form = () => {
 
   return (
     <motion.section
+      id='contact-section'
       ref={ref}
       style={{
         transform: isInView ? 'none' : 'translateX(200px)',
@@ -67,14 +68,34 @@ const Form = () => {
           )}
           <form onSubmit={handleSubmit}>
             <Container className='form-row'>
-              <Input name='name' placeholder='Your name' onChange={handleChange} value={email.name} />
-              <Input name='email' placeholder='Email address' onChange={handleChange} value={email.email} />
+              <Input
+                name='name'
+                placeholder='Your name'
+                onChange={handleChange}
+                value={email.name}
+              />
+              <Input
+                name='email'
+                placeholder='Email address'
+                onChange={handleChange}
+                value={email.email}
+              />
             </Container>
             <Container>
-              <Input name='subject' placeholder='Subject' onChange={handleChange} value={email.subject} />
+              <Input
+                name='subject'
+                placeholder='Subject'
+                onChange={handleChange}
+                value={email.subject}
+              />
             </Container>
             <Container>
-              <textarea rows='3' name='message' placeholder='Message' onChange={handleChange} value={email.message}
+              <textarea
+                rows='3'
+                name='message'
+                placeholder='Message'
+                onChange={handleChange}
+                value={email.message}
               ></textarea>
             </Container>
             <Button content='Send message' />
@@ -89,4 +110,4 @@ const Input = ({ placeholder, type, ...others }) => (
   <input type='text' placeholder={placeholder} {...others} />
 );
 
-export default Form;
+export default Contact;

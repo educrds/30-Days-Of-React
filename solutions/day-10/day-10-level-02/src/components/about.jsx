@@ -28,6 +28,7 @@ const About = () => {
   return (
     <>
       <motion.section
+        id='about-section'
         ref={ref}
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
