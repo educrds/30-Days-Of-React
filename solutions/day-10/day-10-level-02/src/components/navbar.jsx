@@ -30,8 +30,8 @@ function Navbar() {
   }, [icon]);
 
   return (
-    <nav className='navbar'>
-      <Container className='navbar-logo'>
+    <nav>
+      <Container>
         <Title text='Bob_' />
       </Container>
       <Container className={`navbar-links ${isOpen && 'open'}`}>
@@ -40,7 +40,7 @@ function Navbar() {
           <List href='/' content='Skills' />
           <List href='/' content='Experience' />
           <List href='/' content='Contact' />
-          <List className={'theme-button'} content={icon} onClick={changeTheme} />
+          <List className={'toggle-button'} content={icon} onClick={changeTheme} />
         </ul>
       </Container>
       <Container className='navbar-toggle' onClick={() => setIsOpen(!isOpen)}>
