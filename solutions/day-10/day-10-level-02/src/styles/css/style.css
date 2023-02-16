@@ -119,10 +119,6 @@ svg {
   justify-content: center;
 }
 
-svg:hover {
-  color: var(--yellow);
-}
-
 a:hover {
   transform: scale(1.1);
 }
