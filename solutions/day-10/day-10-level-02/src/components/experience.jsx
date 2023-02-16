@@ -69,23 +69,23 @@ const Experience = () => {
 
 const ExpInfo = ({ period, title, resources, brand }) => {
   return (
-    <div className='exp-container'>
-      <div className='exp-icon'>
+    <div className='column'>
+      <div className='icon'>
         {brand}
-        <div className='exp-line'></div>
+        <div className='line'></div>
       </div>
-      <div>
+      <div className='infos'>
         <SmallTitle content={period} />
         <Title text={title} />
-        <div className='technologies'>
-          {resources.map((resource, i) => {
-            return (
-              <div className='item' key={i}>
-                <SmallTitle content={resource} />
-              </div>
-            );
-          })}
-        </div>
+          <div className='technologies'>
+            {resources.map((resource, i) => {
+              return (
+                <div className='item' key={i}>
+                  <SmallTitle content={resource} />
+                </div>
+              );
+            })}
+          </div>
       </div>
     </div>
   );

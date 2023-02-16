@@ -1,0 +1,58 @@
+@import '../mixins/square.scss';
+@import '../mixins/tag.scss';
+
+.experience {
+  display: flex;
+  gap: 2rem;
+
+  .square {
+    @include square;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    height: fit-content;
+    row-gap: 10px;
+  }
+  .column {
+    display: flex;
+    overflow: hidden;
+    .icon {
+      font-size: 1.6rem;
+      color: var(--yellow);
+      margin-right: 1rem;
+      svg {
+        margin-bottom: 0.5rem;
+      }
+    }
+    .line {
+      height: 100%;
+      width: 2px;
+      background-color: var(--yellow);
+      margin: auto;
+    }
+    .infos {
+      @include tag;
+      > p {
+        color: var(--dark-gray);
+      }
+    }
+  }
+}
+@media (max-width: 630px) {
+  .experience {
+    flex-direction: column;
+  }
+  .experience {
+    .square {
+      padding: 5vh 6vw;
+    }
+  }
+}
+@media (min-width: 635px) and (max-width: 870px) {
+  .experience {
+    flex-direction: column;
+    .square {
+      padding: 5vh 4vw;
+    }
+  }
+}
