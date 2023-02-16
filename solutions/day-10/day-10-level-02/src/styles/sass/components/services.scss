@@ -1,0 +1,15 @@
+@import '../mixins/square.scss';
+
+.services {
+  display: flex;
+  gap: 2rem;
+
+  div {
+    @include square;
+  }
+}
+@media (max-width: 630px) {
+  .services {
+    flex-direction: column;
+  }
+}
