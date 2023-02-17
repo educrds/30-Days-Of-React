@@ -10,7 +10,7 @@ const experienceList = [
   {
     period: 'Janeiro - 2023',
     title: 'The Complete Node.js Developer Course',
-    resources: ['Node', 'Express', 'Mongoose', 'Socket.IO', 'REST API'],
+    resources: ['Node', 'MongoDB', 'SocketIO', 'Express', 'REST API'],
     brand: <SiUdemy />,
   },
   {
@@ -22,7 +22,13 @@ const experienceList = [
   {
     period: 'Outubro - 2022',
     title: 'The Complete 2022 Web Development Bootcamp',
-    resources: ['React', 'Node', 'Express', 'SQL', 'Mongoose', 'Bootstrap'],
+    resources: ['MySQL', 'React', 'MongoDB', 'Node', 'Bootstrap', 'Express'],
+    brand: <SiUdemy />,
+  },
+  {
+    period: 'Outubro - 2022',
+    title: 'The Complete SQL Bootcamp 2022: Go from Zero to Hero',
+    resources: ['MySQL', 'PostgreSQL'],
     brand: <SiUdemy />,
   },
   {
@@ -30,12 +36,6 @@ const experienceList = [
     title: 'Google UX Design',
     resources: ['UI/UX designer', 'Interaction designer', 'Visual designer', 'Product designer'],
     brand: <SiCoursera />,
-  },
-  {
-    period: 'Outubro - 2022',
-    title: 'The Complete SQL Bootcamp 2022: Go from Zero to Hero',
-    resources: ['SQL', 'PostgreSQL'],
-    brand: <SiUdemy />,
   },
 ];
 
@@ -57,10 +57,14 @@ const ExperienceList = () => {
   return (
     <>
       <div className='square'>
-        {experienceList.slice(0, 3).map((experience, i) => <ExpInfo key={i} {...experience} /> )}
+        {experienceList.slice(0, 3).map((experience, i) => (
+          <ExpInfo key={i} {...experience} />
+        ))}
       </div>
       <div className='square'>
-        {experienceList.slice(-2).map((experience, i) => <ExpInfo key={i} {...experience} /> )}
+        {experienceList.slice(-2).map((experience, i) => (
+          <ExpInfo key={i} {...experience} />
+        ))}
       </div>
     </>
   );

@@ -12,7 +12,7 @@ const projects = [
     title: 'Chat App',
     description: 'Aplicativo de chat em tempo real utilizando Node e a biblioteca Socket.io.',
     icon: <FaRocketchat />,
-    techList: ['Node', 'Socket.io'],
+    techList: ['Node', 'SocketIO'],
     links: {
       github:
         'https://github.com/educrds/The-Complete-Node.js-Developer-Course/tree/master/chat-app',
@@ -24,7 +24,7 @@ const projects = [
     description:
       'Aplicativo para visualizar indicadores do clima das cidades brasileiras, utilizando API Open Weather.',
     icon: <FaSun />,
-    techList: ['React', 'Styled components'],
+    techList: ['React', 'Styled-Components'],
     links: {
       github: 'https://github.com/educrds/Weather-Project',
       project: 'https://educrds.github.io/Weather-Project/',
@@ -45,7 +45,7 @@ const projects = [
     description:
       'Clone da Netflix com HTML, CSS e JS, usando a API MovieDB para buscar informações para exibição.',
     icon: <RiNetflixFill />,
-    techList: ['MovieDB', 'JS'],
+    techList: ['JavaScript', 'MovieDB'],
     links: {
       github: 'https://github.com/educrds/netflix-clone',
       project: 'https://educrds.github.io/netflix-clone/',
@@ -56,7 +56,7 @@ const projects = [
     description:
       'Projeto de uma landing page de um Zoológico feita para o projeto final do Bootcamp beAcademy.',
     icon: <GiSnakeTongue />,
-    techList: ['Bootstrap', 'JS'],
+    techList: ['Bootstrap', 'JavaScript'],
     links: {
       github: 'https://github.com/educrds/BeAcademy-Final-Project',
       project: 'https://educrds.github.io/BeAcademy-Final-Project/',
@@ -67,7 +67,7 @@ const projects = [
     description:
       'Jogo da Forca recriado com JS, HTML, CSS e Bootstrap. Dê adeus ao chato e experimente essa nova versão.',
     icon: <FaGamepad />,
-    techList: ['Bootstrap', 'JS'],
+    techList: ['Bootstrap', 'JavaScript'],
     links: {
       github: 'https://github.com/educrds/HangMan-Game',
       project: 'https://educrds.github.io/HangMan-Game/',
@@ -101,7 +101,7 @@ const Technologies = ({ techList }) => {
     <Container className='technologies'>
       {techList.map((tech, i) => {
         return (
-          <Container className='item' key={i}>
+          <Container className={`item ${tech}`} key={i}>
             <SmallTitle content={tech} />
           </Container>
         );

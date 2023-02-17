@@ -1,17 +1,25 @@
+@import '../tech-variables';
+
 @mixin tag {
   .technologies {
     gap: 0.35rem;
     margin: 1vh 0 2.5vh;
     flex-wrap: wrap;
     display: flex;
-    .item {
-      @include themify($themes) {
-        background-color: themed('yellowColor');
-      }
+    align-items: center;
 
+    .item {
+      border: solid 1px #333;
       padding: 0 1vw;
-      border-radius: 2rem;
+      border-radius: 10rem;
       white-space: nowrap;
+    }
+    @each $technology in $technologies {
+      .item.#{$technology} {
+        background-color: get-color-for-technology($technology);
+        border: none;
+        color: #fdfdfd;
+      }
     }
   }
 }
