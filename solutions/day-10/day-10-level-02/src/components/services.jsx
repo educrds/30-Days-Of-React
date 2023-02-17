@@ -3,6 +3,7 @@ import Square from './Square';
 import { Title } from './Title';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { getTransformStyle } from '../utils';
 
 const servicesList = [
   {
@@ -27,14 +28,7 @@ const Services = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <motion.section
-      ref={ref}
-      style={{
-        transform: isInView ? 'none' : 'translateX(200px)',
-        opacity: isInView ? 1 : 0,
-        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-      }}
-    >
+    <motion.section ref={ref} style={getTransformStyle(isInView, '200px')}>
       <Title text='Services' />
       <Container className='services'>
         {servicesList.map(({ ...service }) => (

@@ -3,6 +3,7 @@ import { SmallTitle, Title } from './Title';
 import { SiUdemy, SiUdacity, SiCoursera } from 'react-icons/si';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { getTransformStyle } from '../utils';
 
 const experienceList = [
   {
@@ -42,15 +43,7 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <motion.section
-      id='experience-section'
-      ref={ref}
-      style={{
-        transform: isInView ? 'none' : 'translateX(-200px)',
-        opacity: isInView ? 1 : 0,
-        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-      }}
-    >
+    <motion.section id='experience-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
       <Title text='Experience' />
       <Container className='experience'>
         <div className='square'>

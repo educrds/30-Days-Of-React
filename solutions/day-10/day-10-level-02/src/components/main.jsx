@@ -3,37 +3,29 @@ import { Title, SmallTitle } from './Title';
 import Container from './Container';
 import Photo from './Photo';
 import List from './List';
-import Button from './Button';
 import { motion } from 'framer-motion';
+import { mainCardVariants } from '../utils';
 
-const socialNetworks = [<FaGithubAlt />, <FaLinkedin />];
+const socialNetworks = [
+  { link: 'https://github.com/educrds', icon: <FaGithubAlt /> },
+  { link: 'https://www.linkedin.com/in/eduardocrds', icon: <FaLinkedin /> },
+];
 
 const Main = () => {
   return (
     <section>
       <motion.div
         className='mainCard'
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          default: {
-            duration: 0.3,
-            ease: [0, 0.71, 0.2, 1.01],
-          },
-          scale: {
-            type: 'spring',
-            damping: 5,
-            stiffness: 100,
-            restDelta: 0.001,
-          },
-        }}
+        variants={mainCardVariants}
+        initial='initial'
+        animate='animate'
+        transition='transition'
       >
         <Container>
           <Photo />
           <Title text='Bob Doe' />
           <SmallTitle content="I'm a Web Development" />
           <SocialIcons />
-          <Button content='Hire me' />
         </Container>
       </motion.div>
     </section>
@@ -43,8 +35,8 @@ const Main = () => {
 const SocialIcons = () => {
   return (
     <ul>
-      {socialNetworks.map((icon, index) => (
-        <List key={index} content={icon} />
+      {socialNetworks.map(({ link, icon }, i) => (
+        <List key={i} content={icon} href={link} target='_blank' />
       ))}
     </ul>
   );

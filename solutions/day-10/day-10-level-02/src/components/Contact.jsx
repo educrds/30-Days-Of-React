@@ -6,6 +6,7 @@ import { Title } from './Title';
 import Button from './Button';
 import Container from './Container';
 import emailjs from '@emailjs/browser';
+import { getTransformStyle } from '../utils';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -42,15 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <motion.section
-      id='contact-section'
-      ref={ref}
-      style={{
-        transform: isInView ? 'none' : 'translateX(200px)',
-        opacity: isInView ? 1 : 0,
-        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-      }}
-    >
+    <motion.section id='contact-section' ref={ref} style={getTransformStyle(isInView, '200px')}>
       <Title text='Get In Touch' />
       <Container className='contact'>
         <Container>

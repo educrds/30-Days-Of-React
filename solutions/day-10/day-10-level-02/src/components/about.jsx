@@ -5,6 +5,7 @@ import Container from './Container';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import ProgressBar from './ProgressBar';
+import { getTransformStyle } from '../utils';
 
 const skillsPercentage = [
   {
@@ -27,15 +28,7 @@ const About = () => {
 
   return (
     <>
-      <motion.section
-        id='about-section'
-        ref={ref}
-        style={{
-          transform: isInView ? 'none' : 'translateX(-200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
-        }}
-      >
+      <motion.section id='about-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
         <Title text='About me' />
         <Container className='about'>
           <Container className='photo'>
