@@ -14,3 +14,12 @@
   right: 100%;
   top: 50px;
 }
+@mixin setup-display-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin bar {
+  height: 8px;
+  border-radius: 30px;
+}

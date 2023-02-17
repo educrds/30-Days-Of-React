@@ -1,7 +1,5 @@
-@mixin bar {
-  height: 8px;
-  border-radius: 30px;
-}
+@import '../mixins/mixins';
+
 .progress-bar {
   width: 100%;
   background-color: #f1f1f1;
