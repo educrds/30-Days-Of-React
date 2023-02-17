@@ -1,9 +1,10 @@
 import Container from './Container';
-import { SmallTitle, Title } from './Title';
+import { SmallTitle, Title } from './TitleVariants';
 import { SiUdemy, SiUdacity, SiCoursera } from 'react-icons/si';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { getTransformStyle } from '../utils';
+import { Technologies } from './Projects';
 
 const experienceList = [
   {
@@ -46,18 +47,22 @@ const Experience = () => {
     <motion.section id='experience-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
       <Title text='Experience' />
       <Container className='experience'>
-        <div className='square'>
-          {experienceList.slice(0, 3).map(({ ...experience }, index) => (
-            <ExpInfo key={index} {...experience} />
-          ))}
-        </div>
-        <div className='square'>
-          {experienceList.slice(-2).map(({ ...experience }, index) => (
-            <ExpInfo key={index} {...experience} />
-          ))}
-        </div>
+        <ExperienceList />
       </Container>
     </motion.section>
+  );
+};
+
+const ExperienceList = () => {
+  return (
+    <>
+      <div className='square'>
+        {experienceList.slice(0, 3).map((experience, i) => <ExpInfo key={i} {...experience} /> )}
+      </div>
+      <div className='square'>
+        {experienceList.slice(-2).map((experience, i) => <ExpInfo key={i} {...experience} /> )}
+      </div>
+    </>
   );
 };
 
@@ -71,15 +76,7 @@ const ExpInfo = ({ period, title, resources, brand }) => {
       <div className='infos'>
         <SmallTitle content={period} />
         <Title text={title} />
-        <div className='technologies'>
-          {resources.map((resource, i) => {
-            return (
-              <div className='item' key={i}>
-                <SmallTitle content={resource} />
-              </div>
-            );
-          })}
-        </div>
+        <Technologies techList={resources} />
       </div>
     </div>
   );

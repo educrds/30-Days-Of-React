@@ -1,10 +1,11 @@
 import { FaSun, FaLink, FaGithub, FaRocketchat, FaCalculator, FaGamepad } from 'react-icons/fa';
 import { RiNetflixFill } from 'react-icons/ri';
 import { GiSnakeTongue } from 'react-icons/gi';
-import { SmallTitle, Title } from './Title';
+import { SmallTitle, Title } from './TitleVariants';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { getTransformStyle } from '../utils';
+import Container from './Container';
 
 const projects = [
   {
@@ -75,54 +76,73 @@ const projects = [
 ];
 
 const Item = () => {
-  return projects.map((project, i) => {
+  return projects.map(({ icon, title, techList, description, links }, i) => {
     return (
-      <div key={i}>
-        <div className='title'>
-          {project.icon}
-          <Title text={project.title} />
-        </div>
-        <div className='technologies'>
-          {project.techList.map((tech, i) => {
-            return (
-              <div className='item' key={i}>
-                <SmallTitle content={tech} />
-              </div>
-            );
-          })}
-        </div>
-        <div className='description'>
-          <SmallTitle content={project.description} />
-        </div>
-        <div className='links'>
-          <a href={project.links.github} target='_blank'>
-            <FaGithub />
-          </a>
-          <a href={project.links.project} target='_blank'>
-            <FaLink />
-          </a>
-        </div>
-      </div>
+      <Container key={i}>
+        <ProjectTitle icon={icon} title={title} />
+        <Technologies techList={techList} />
+        <ProjectDescription description={description} />
+        <ProjectLinks links={links} />
+      </Container>
     );
   });
 };
 
-const Projects = () => {
+const ProjectTitle = ({ title, icon }) => {
+  return (
+    <Container className='title'>
+      {icon}
+      <Title text={title} />
+    </Container>
+  );
+};
+const Technologies = ({ techList }) => {
+  return (
+    <Container className='technologies'>
+      {techList.map((tech, i) => {
+        return (
+          <Container className='item' key={i}>
+            <SmallTitle content={tech} />
+          </Container>
+        );
+      })}
+    </Container>
+  );
+};
+
+const ProjectDescription = ({ description }) => {
+  return (
+    <Container className='description'>
+      <SmallTitle content={description} />
+    </Container>
+  );
+};
+
+const ProjectLinks = ({ links }) => {
+  return (
+    <Container className='links'>
+      <a href={links.github} target='_blank'>
+        <FaGithub />
+      </a>
+      <a href={links.project} target='_blank'>
+        <FaLink />
+      </a>
+    </Container>
+  );
+};
+
+export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
-    <motion.section
-      id='projects-section'
-      ref={ref}
-      style={getTransformStyle(isInView, '-200px')}
-    >
+    <motion.section id='projects-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
       <Title text='Projects' />
-      <div className='projects'>
+      <Container className='projects'>
         <Item />
-      </div>
+      </Container>
     </motion.section>
   );
-};
+}
 
-export default Projects;
+export { Technologies };

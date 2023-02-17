@@ -1,9 +1,8 @@
-import React from 'react';
-import { Title } from './Title';
-import { DiNodejsSmall, DiJavascript, DiMysql, DiGithubBadge, DiReact, DiCss3, DiHtml5, DiBootstrap } from 'react-icons/di';
-import Container from './Container';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { SmallTitle, Title } from './TitleVariants';
+import { DiNodejsSmall, DiJavascript, DiMysql, DiGithubBadge, DiReact, DiCss3, DiHtml5, DiBootstrap } from 'react-icons/di';
+import Container from './Container';
 import { getTransformStyle } from '../utils';
 
 const techList = [
@@ -24,15 +23,21 @@ const TechSkills = () => {
   return (
     <motion.section id='skills-section' ref={ref} style={getTransformStyle(isInView, '200px')}>
       <Title text='Tech Skills' />
-      <Container className='tech-list'>
-        {techList.map(({ techName, techIcon }) => (
-          <Container key={techName} className={`${techName}`}>
-            {techIcon}
-            <p>{techName}</p>
-          </Container>
-        ))}
-      </Container>
+      <TechList />
     </motion.section>
+  );
+};
+
+const TechList = () => {
+  return (
+    <Container className='tech-list'>
+      {techList.map(({ techName, techIcon }, i) => (
+        <Container key={i} className={techName}>
+          {techIcon}
+          <SmallTitle content={techName} />
+        </Container>
+      ))}
+    </Container>
   );
 };
 

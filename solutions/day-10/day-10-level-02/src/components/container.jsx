@@ -1,10 +1,8 @@
-const Container = ({ children, className, ...others }) => {
+const Container = ({ children, className, others }) => {
   return (
-    <>
-      <div {...others} className={className}>
-        {children}
-      </div>
-    </>
+    <div {...others} className={className}>
+      {children}
+    </div>
   );
 };
 

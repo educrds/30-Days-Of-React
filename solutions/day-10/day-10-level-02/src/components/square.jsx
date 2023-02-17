@@ -1,5 +1,5 @@
 import Container from './Container';
-import { SmallTitle, Title } from './Title';
+import { SmallTitle, Title } from './TitleVariants';
 
 const Square = ({ title, content, image }) => {
   return (

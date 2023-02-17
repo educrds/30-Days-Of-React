@@ -1,6 +1,6 @@
 import Container from './Container';
 import Square from './Square';
-import { Title } from './Title';
+import { Title } from './TitleVariants';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { getTransformStyle } from '../utils';
@@ -31,9 +31,7 @@ const Services = () => {
     <motion.section ref={ref} style={getTransformStyle(isInView, '200px')}>
       <Title text='Services' />
       <Container className='services'>
-        {servicesList.map(({ ...service }) => (
-          <Square key={service.title} {...service} />
-        ))}
+        {servicesList.map(service => <Square key={service.title} {...service} /> )}
       </Container>
     </motion.section>
   );

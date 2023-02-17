@@ -1,4 +1,4 @@
-import { Title, SmallTitle } from './Title';
+import { Title, SmallTitle } from './TitleVariants';
 import Photo from './Photo';
 import Button from './Button';
 import Container from './Container';
@@ -31,24 +31,36 @@ const About = () => {
       <motion.section id='about-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
         <Title text='About me' />
         <Container className='about'>
-          <Container className='photo'>
+          <Container>
             <Photo />
           </Container>
           <Container className='summary'>
-            <Container className='about-text'>
-              <SmallTitle content='I am Bob Doe, web developer from Brazil, South America. I have rich experience in web site design and building and customization, also I am good at WordPress.' />
-
-              <Button content='Download CV' />
-            </Container>
-            <Container className='skills'>
-              {skillsPercentage.map(({ content, percentage }, i) => (
-                <ProgressBar key={i} content={content} percentage={percentage} />
-              ))}
-            </Container>
+            <Summary />
+            <Skills />
           </Container>
         </Container>
       </motion.section>
     </>
+  );
+};
+
+const Summary = () => {
+  return (
+    <Container>
+      <SmallTitle content='I am Bob Doe, web developer from Brazil, South America. I have rich experience in web site design and building and customization, also I am good at WordPress.' />
+
+      <Button content='Download CV' />
+    </Container>
+  );
+};
+
+const Skills = () => {
+  return (
+    <Container className='skills'>
+      {skillsPercentage.map((all, i) => (
+        <ProgressBar key={i} {...all} />
+      ))}
+    </Container>
   );
 };
 

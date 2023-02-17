@@ -1,5 +1,5 @@
 import { FaLinkedin, FaGithubAlt } from 'react-icons/fa';
-import { Title, SmallTitle } from './Title';
+import { Title, SmallTitle } from './TitleVariants';
 import Container from './Container';
 import Photo from './Photo';
 import List from './List';

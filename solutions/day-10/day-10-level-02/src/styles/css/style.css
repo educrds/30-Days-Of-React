@@ -191,7 +191,6 @@ nav .navbar-toggle {
     margin: 0;
   }
 }
-/* Main Container */
 .mainCard {
   text-align: center;
 }
@@ -213,10 +212,10 @@ nav .navbar-toggle {
 .about {
   display: flex;
 }
-.about .photo {
+.about > div {
   flex: 1;
 }
-.about .photo img {
+.about > div img {
   width: 150px;
   border-radius: 100%;
   filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 3px 8px);
@@ -224,7 +223,7 @@ nav .navbar-toggle {
 .about .summary {
   color: #333;
   display: flex;
-  flex: 3.5;
+  flex: 3.75;
   border-radius: 1.3rem;
   padding: 3vh 3vw;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
@@ -236,6 +235,15 @@ nav .navbar-toggle {
 }
 .theme-dark .about .summary {
   background: #fff;
+}
+.about .summary > div {
+  flex: 1;
+}
+.about .summary > div button {
+  margin: 3vh 0 1.5vh;
+}
+.about .summary .skills {
+  flex: 1;
 }
 .about ::after {
   border: 0.75em solid transparent;
@@ -250,13 +258,6 @@ nav .navbar-toggle {
 }
 .theme-dark .about ::after {
   border-right-color: #fff;
-}
-.about .about-text button {
-  margin: 3vh 0;
-}
-.about .about-text,
-.about .skills {
-  flex: 1;
 }
 
 @media (max-width: 630px) {
@@ -423,7 +424,7 @@ nav .navbar-toggle {
   text-align: left;
 }
 .projects > div:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .projects .links {
   font-size: 1.35rem;
@@ -472,7 +473,7 @@ nav .navbar-toggle {
   background-color: #fff;
 }
 .services div:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 @media (max-width: 630px) {
@@ -576,10 +577,8 @@ nav .navbar-toggle {
 .contact .form {
   flex: 2;
 }
-.contact .form > div {
-  background-color: #ebfbf5;
-  color: #35d39d;
-  border-radius: 25px;
+.contact .form .message {
+  border-radius: 2rem;
   padding: 1vh 2vw;
   text-align: center;
   justify-content: center;
@@ -588,10 +587,16 @@ nav .navbar-toggle {
   align-items: center;
   transition: 0.5s;
   display: flex;
+  background-color: #fbebeb;
+  color: #d33535;
 }
-.contact .form > div svg {
+.contact .form .message svg {
   font-size: 1.1rem;
   margin-right: 0.3vw;
+}
+.contact .form .message.isSuccessfull {
+  background-color: #ebfbf5;
+  color: #35d39d;
 }
 .contact .form .form-row {
   gap: 2vw;

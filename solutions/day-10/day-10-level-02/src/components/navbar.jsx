@@ -1,14 +1,13 @@
 import { RiMoonFill, RiSunLine } from 'react-icons/ri';
 import { useState, useContext } from 'react';
-import { TbMenu2 } from 'react-icons/tb';
-import { Title } from './Title';
+import { TbMenu2 } from 'react-icons/tb';  
+import { Title } from './TitleVariants';
 import Container from './Container';
 import List from './List';
 import { ThemeContext } from '../contexts/theme-context';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleThemeChange = () => {
