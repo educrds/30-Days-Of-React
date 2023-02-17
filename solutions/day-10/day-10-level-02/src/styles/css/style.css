@@ -403,12 +403,12 @@ nav .navbar-toggle {
   white-space: nowrap;
 }
 .projects > div .technologies .item.Node {
-  background-color: #6aa25a;
+  background-color: #4da53f;
   border: none;
   color: #fdfdfd;
 }
 .projects > div .technologies .item.React {
-  background-color: #61dafb;
+  background-color: #2f74c0;
   border: none;
   color: #fdfdfd;
 }
@@ -438,12 +438,12 @@ nav .navbar-toggle {
   color: #fdfdfd;
 }
 .projects > div .technologies .item.MySQL {
-  background-color: #00718b;
+  background-color: #2f74c0;
   border: none;
   color: #fdfdfd;
 }
 .projects > div .technologies .item.PostgreSQL {
-  background-color: #31648c;
+  background-color: #2f74c0;
   border: none;
   color: #fdfdfd;
 }
@@ -589,12 +589,12 @@ nav .navbar-toggle {
   white-space: nowrap;
 }
 .experience .column .infos .technologies .item.Node {
-  background-color: #6aa25a;
+  background-color: #4da53f;
   border: none;
   color: #fdfdfd;
 }
 .experience .column .infos .technologies .item.React {
-  background-color: #61dafb;
+  background-color: #2f74c0;
   border: none;
   color: #fdfdfd;
 }
@@ -624,12 +624,12 @@ nav .navbar-toggle {
   color: #fdfdfd;
 }
 .experience .column .infos .technologies .item.MySQL {
-  background-color: #00718b;
+  background-color: #2f74c0;
   border: none;
   color: #fdfdfd;
 }
 .experience .column .infos .technologies .item.PostgreSQL {
-  background-color: #31648c;
+  background-color: #2f74c0;
   border: none;
   color: #fdfdfd;
 }
