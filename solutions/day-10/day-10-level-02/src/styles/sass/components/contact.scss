@@ -1,0 +1,62 @@
+.contact {
+  > div {
+    flex: 1;
+    position: relative;
+    @include themify($themes) {
+      color: themed('fontColor');
+    }
+
+    a {
+      color: #ffd15c;
+    }
+  }
+  .form {
+    flex: 2;
+    .message {
+      border-radius: 2rem;
+      padding: 1vh 2vw;
+      text-align: center;
+      justify-content: center;
+      margin: 0 0 2vh;
+      font-weight: 500;
+      align-items: center;
+      transition: 0.5s;
+      display: flex;
+      background-color: #fbebeb;
+      color: #d33535;
+      svg {
+        font-size: 1.1rem;
+        margin-right: 0.3vw;
+      }
+      &.isSuccessfull {
+        background-color: #ebfbf5;
+        color: #35d39d;
+      }
+    }
+    .form-row {
+      gap: 2vw;
+    }
+  }
+}
+.contact,
+.form-row {
+  display: flex;
+}
+
+@media (max-width: 630px) {
+  .contact {
+    flex-direction: column;
+    > div {
+      text-align: center;
+      margin-bottom: 3.5vh;
+    }
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  form {
+    button {
+      float: left;
+    }
+  }
+}

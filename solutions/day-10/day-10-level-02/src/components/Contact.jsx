@@ -1,8 +1,8 @@
 import { motion, useInView } from 'framer-motion';
-import { FaCheckCircle } from 'react-icons/fa';
-import { useState } from 'react';
-import { useRef } from 'react';
-import { Title } from './Title';
+import { FaCheckCircle, FaTimes } from 'react-icons/fa';
+import { MdError } from 'react-icons/md';
+import { useState, useRef, useEffect } from 'react';
+import { SmallTitle, Title } from './TitleVariants';
 import Button from './Button';
 import Container from './Container';
 import emailjs from '@emailjs/browser';
@@ -14,26 +14,48 @@ const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  // const [isShown, setIsShown] = useState(false);
+  const [validateMessage, setValidateMessage] = useState(null);
   const [email, setEmail] = useState({
     name: '',
     email: '',
     subject: '',
     message: '',
   });
-  const [isShown, setIsShown] = useState(false);
+
+  useEffect(() => {
+    if (validateMessage && validateMessage.type === 'success') {
+      const timer = setTimeout(() => {
+        setValidateMessage(null);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [validateMessage]);
 
   const handleSubmit = e => {
     e.preventDefault();
 
+    // Verifica se todos os campos foram preenchidos
+    if (Object.values(email).some(value => value === '')) {
+      setValidateMessage({ type: 'error', content: 'Por favor, preencha todos os campos.' });
+      return;
+    }
+
+    // Verifica se o formato do email está correto
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.email)) {
+      setValidateMessage({ type: 'error', content: 'Por favor, insira um email válido.' });
+      return;
+    }
+
+    // Envia o email
     emailjs.send('service_tmp127n', 'template_xtuqxuo', email, apiKey).then(
       () => {
-        setIsShown(true);
+        setValidateMessage({ type: 'success', content: 'Email enviado com sucesso!' });
         setEmail({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => {
-          setIsShown(false);
-        }, 5000);
       },
-      () => setIsShown(false)
+      () => setValidateMessage({ type: 'error', content: 'Ocorreu um erro ao enviar o email.' })
     );
   };
 
@@ -46,19 +68,9 @@ const Contact = () => {
     <motion.section id='contact-section' ref={ref} style={getTransformStyle(isInView, '200px')}>
       <Title text='Get In Touch' />
       <Container className='contact'>
-        <Container>
-          <h3>Let's talk about everything?</h3>
-          <p>
-            Don't like forms? Send me an <a href='mailto:eduardocardoso1039@gmail.com'>email</a>.
-          </p>
-        </Container>
+        <Header />
         <Container className='form'>
-          {isShown && (
-            <Container>
-              <FaCheckCircle />
-              <p>Email enviado com sucesso!</p>
-            </Container>
-          )}
+          {validateMessage && <Message message={validateMessage} />}
           <form onSubmit={handleSubmit}>
             <Container className='form-row'>
               <Input
@@ -99,7 +111,33 @@ const Contact = () => {
   );
 };
 
-const Input = ({ placeholder, type, ...others }) => (
+const Header = () => {
+  return (
+    <Container>
+      <h3>Let's talk about everything?</h3>
+      <p>
+        Don't like forms? Send me an <a href='mailto:eduardocardoso1039@gmail.com'>email</a>.
+      </p>
+    </Container>
+  );
+};
+
+const Message = ({ message }) => {
+  const [isSuccessfull, setIsSuccessfull] = useState(message.type === 'success');
+
+  useEffect(() => {
+    setIsSuccessfull(message.type === 'success');
+  }, [message]);
+
+  return (
+    <Container className={`message ${isSuccessfull ? 'isSuccessfull' : ''}`}>
+      {isSuccessfull ? <FaCheckCircle /> : <MdError />}
+      <SmallTitle content={message.content} />
+    </Container>
+  );
+};
+
+const Input = ({ placeholder, ...others }) => (
   <input type='text' placeholder={placeholder} {...others} />
 );
 
