@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import { FaCheckCircle, FaTimes } from 'react-icons/fa';
+import { FaCheckCircle } from 'react-icons/fa';
 import { MdError } from 'react-icons/md';
 import { useState, useRef, useEffect } from 'react';
 import { SmallTitle, Title } from './TitleVariants';
@@ -14,7 +14,6 @@ const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  // const [isShown, setIsShown] = useState(false);
   const [validateMessage, setValidateMessage] = useState(null);
   const [email, setEmail] = useState({
     name: '',
@@ -27,7 +26,7 @@ const Contact = () => {
     if (validateMessage && validateMessage.type === 'success') {
       const timer = setTimeout(() => {
         setValidateMessage(null);
-      }, 2000);
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
