@@ -2,17 +2,18 @@
 
 @mixin tag {
   .technologies {
-    gap: 0.35rem;
-    margin: 1vh 0 2.5vh;
+    gap: 0.3rem;
+    margin: 1vh 0 1.375vw;
     flex-wrap: wrap;
     display: flex;
     align-items: center;
 
     .item {
       border: solid 1px #333;
-      padding: 0 1vw;
+      padding: 0.25vh 1vw;
       border-radius: 10rem;
       white-space: nowrap;
+      font-size: 0.9rem;
     }
     @each $technology in $technologies {
       .item.#{$technology} {

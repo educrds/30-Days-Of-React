@@ -28,7 +28,7 @@ const experienceList = [
   {
     period: 'Outubro - 2022',
     title: 'The Complete 2022 Web Development Bootcamp',
-    resources: ['MySQL', 'React', 'MongoDB', 'Node', 'Bootstrap', 'Express'],
+    resources: ['Express', 'Bootstrap','MySQL', 'React', 'MongoDB', 'Node'],
     link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-1ad50437-35ce-4b4d-b4ae-4de6a852764b.jpg?v=1666789196000',
   },
   {

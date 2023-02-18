@@ -390,17 +390,18 @@ nav .navbar-toggle {
   flex: 1 0 30%;
 }
 .projects > div .technologies {
-  gap: 0.35rem;
-  margin: 1vh 0 2.5vh;
+  gap: 0.3rem;
+  margin: 1vh 0 1.375vw;
   flex-wrap: wrap;
   display: flex;
   align-items: center;
 }
 .projects > div .technologies .item {
   border: solid 1px #333;
-  padding: 0 1vw;
+  padding: 0.25vh 1vw;
   border-radius: 10rem;
   white-space: nowrap;
+  font-size: 0.9rem;
 }
 .projects > div .technologies .item.Node {
   background-color: #4da53f;
@@ -585,17 +586,18 @@ nav .navbar-toggle {
   margin: auto;
 }
 .experience .column .infos .technologies {
-  gap: 0.35rem;
-  margin: 1vh 0 2.5vh;
+  gap: 0.3rem;
+  margin: 1vh 0 1.375vw;
   flex-wrap: wrap;
   display: flex;
   align-items: center;
 }
 .experience .column .infos .technologies .item {
   border: solid 1px #333;
-  padding: 0 1vw;
+  padding: 0.25vh 1vw;
   border-radius: 10rem;
   white-space: nowrap;
+  font-size: 0.9rem;
 }
 .experience .column .infos .technologies .item.Node {
   background-color: #4da53f;
