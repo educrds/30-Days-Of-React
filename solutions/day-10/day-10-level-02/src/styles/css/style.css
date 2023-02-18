@@ -457,6 +457,16 @@ nav .navbar-toggle {
   border: none;
   color: #fdfdfd;
 }
+.projects > div .technologies .item.HTML {
+  background-color: #f75421;
+  border: none;
+  color: #fdfdfd;
+}
+.projects > div .technologies .item.CSS {
+  background-color: #2f74c0;
+  border: none;
+  color: #fdfdfd;
+}
 .theme-light .projects > div {
   background-color: #fff;
 }
@@ -545,7 +555,6 @@ nav .navbar-toggle {
   display: flex;
   text-align: left;
   flex-direction: column;
-  height: fit-content;
   row-gap: 10px;
 }
 .theme-light .experience .square {
@@ -643,8 +652,22 @@ nav .navbar-toggle {
   border: none;
   color: #fdfdfd;
 }
+.experience .column .infos .technologies .item.HTML {
+  background-color: #f75421;
+  border: none;
+  color: #fdfdfd;
+}
+.experience .column .infos .technologies .item.CSS {
+  background-color: #2f74c0;
+  border: none;
+  color: #fdfdfd;
+}
 .experience .column .infos > p {
   color: #808080;
+}
+.experience .column .infos > a {
+  color: #333;
+  text-decoration: none;
 }
 
 @media (max-width: 630px) {
