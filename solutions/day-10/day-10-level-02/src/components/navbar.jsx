@@ -30,12 +30,7 @@ function Navbar() {
       <Container className='container'>
         <NavBrand />
         <NavbarToggle isOpen={isOpen} toggleNavElements={toggleNavElements} />
-        <NavElements
-          isOpen={isOpen}
-          navItems={navItems}
-          theme={theme}
-          handleThemeChange={handleThemeChange}
-          toggleNavElements={toggleNavElements}
+        <NavElements isOpen={isOpen} navItems={navItems} theme={theme} handleThemeChange={handleThemeChange} toggleNavElements={toggleNavElements}
         />
       </Container>
     </nav>

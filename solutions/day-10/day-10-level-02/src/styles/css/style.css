@@ -144,10 +144,6 @@ a:hover {
   height: 100%;
 }
 
-.navbar {
-  position: relative;
-}
-
 .navbar-toggle {
   display: none;
   font-size: 1.5rem;
@@ -164,11 +160,6 @@ a:hover {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-elements ul li:not(:last-child) {
-    margin-right: 30px;
-  }
-}
 @media (max-width: 630px) {
   .navbar-toggle {
     display: block;
@@ -234,7 +225,7 @@ a:hover {
   flex: 5;
   border-radius: 1.3rem;
   padding: 3vh 3vw;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.08) -5px 3px 8px;
   position: relative;
   gap: 10px;
 }
@@ -268,7 +259,12 @@ a:hover {
   border-right-color: #fff;
 }
 
-@media (max-width: 630px) {
+@media (max-width: 768px) {
+  .photo {
+    display: none;
+  }
+}
+@media (max-width: 870px) {
   .about {
     flex-direction: column;
     text-align: center;
@@ -278,19 +274,6 @@ a:hover {
     flex-direction: column;
   }
   .about .summary::after {
-    border: none;
-  }
-}
-@media (min-width: 635px) and (max-width: 870px) {
-  .about {
-    flex-direction: column;
-    text-align: center;
-    row-gap: 2vh;
-  }
-  .about .summary {
-    flex-direction: column;
-  }
-  .about ::after {
     border: none;
   }
 }
@@ -324,9 +307,9 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   color: #333;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
   border-radius: 1.3rem;
-  padding: 3vh 3vw;
+  padding: 3vh 1.5vw;
   row-gap: 3vh;
 }
 .theme-light .tech-list {
@@ -394,7 +377,7 @@ a:hover {
   text-align: center;
   border-radius: 2rem;
   padding: 5vh 2.5vw;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
   flex: 1 0 30%;
 }
 .projects > div .technologies {
@@ -410,6 +393,7 @@ a:hover {
   border-radius: 10rem;
   white-space: nowrap;
   font-size: 0.9rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
 }
 .projects > div .technologies .item.Node {
   background-color: #4da53f;
@@ -534,7 +518,7 @@ a:hover {
   text-align: center;
   border-radius: 2rem;
   padding: 5vh 2.5vw;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
   flex: 1;
 }
 .theme-light .services div {
@@ -561,7 +545,7 @@ a:hover {
   text-align: center;
   border-radius: 2rem;
   padding: 5vh 2.5vw;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
   flex: 1;
   display: flex;
   text-align: left;
@@ -608,6 +592,7 @@ a:hover {
   border-radius: 10rem;
   white-space: nowrap;
   font-size: 0.9rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
 }
 .experience .column .infos .technologies .item.Node {
   background-color: #4da53f;

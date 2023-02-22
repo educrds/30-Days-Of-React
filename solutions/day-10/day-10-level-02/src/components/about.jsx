@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import ProgressBar from './ProgressBar';
 import { getTransformStyle } from '../utils';
+import curriculum from '../assets/imgs/CV-Eduardo Cardoso.pdf';
 
 const skillsPercentage = [
   {
@@ -28,7 +29,7 @@ const About = () => {
         <Title text='Sobre mim' />
         <Container className='about'>
           <Container>
-            <Photo />
+            <Photo className='photo' />
           </Container>
           <Container className='summary'>
             <Summary />
@@ -43,13 +44,15 @@ const About = () => {
 const Summary = () => (
   <Container>
     <SmallTitle content='Desenvolvedor front-end React com experiência em criar interfaces de usuário responsivas e acessíveis e atualizado com as últimas tendências de design e desenvolvimento front-end.' />
-    <Button content='Baixar CV' />
+    <Button content='Baixar CV' href={curriculum} target='_blank' />
   </Container>
 );
 
 const Skills = () => (
   <Container className='skills'>
-    {skillsPercentage.map((all, i) => <ProgressBar key={i} {...all} />)}
+    {skillsPercentage.map((all, i) => (
+      <ProgressBar key={i} {...all} />
+    ))}
   </Container>
 );
 

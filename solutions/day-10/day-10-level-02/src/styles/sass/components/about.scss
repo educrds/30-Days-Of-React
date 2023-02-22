@@ -18,7 +18,7 @@
 
     border-radius: 1.3rem;
     padding: 3vh 3vw;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.08) -5px 3px 8px;
     position: relative;
     gap: 10px;
     > div {
@@ -35,8 +35,12 @@
     }
   }
 }
-
-@media (max-width: 630px) {
+@media (max-width: 768px) {
+  .photo {
+    display: none;
+  }
+}
+@media (max-width: 870px) {
   .about {
     flex-direction: column;
     text-align: center;
@@ -46,20 +50,6 @@
       &::after {
         border: none;
       }
-    }
-  }
-}
-
-@media (min-width: 635px) and (max-width: 870px) {
-  .about {
-    flex-direction: column;
-    text-align: center;
-    row-gap: 2vh;
-    .summary {
-      flex-direction: column;
-    }
-    & ::after {
-      border: none;
     }
   }
 }

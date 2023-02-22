@@ -6,17 +6,11 @@
   align-items: center;
   height: 100%;
 }
-
-.navbar {
-  position: relative;
-}
-
 .navbar-toggle {
   display: none;
   font-size: 1.5rem;
 }
-
-.navbar-toggle svg{
+.navbar-toggle svg {
   cursor: pointer;
 }
 
@@ -25,13 +19,6 @@
   justify-content: space-between;
   list-style-type: none;
   cursor: pointer;
-}
-
-
-@media (max-width: 768px) {
-  .nav-elements ul li:not(:last-child) {
-    margin-right: 30px;
-  }
 }
 
 @media (max-width: 630px) {
@@ -63,5 +50,4 @@
     flex-direction: column;
     gap: 5vh;
   }
-
 }

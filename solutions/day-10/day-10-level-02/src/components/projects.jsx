@@ -26,8 +26,8 @@ const projects = [
     icon: <FaSun />,
     techList: ['React', 'Styled-Components'],
     links: {
-      github: 'https://github.com/educrds/Weather-Project',
-      project: 'https://educrds.github.io/Weather-Project/',
+      github: 'https://github.com/educrds/react-weather-app',
+      project: 'https://educrds.github.io/react-weather-app/',
     },
   },
   {
