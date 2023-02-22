@@ -23,6 +23,11 @@ html {
   color: #ccc;
   background-color: #353838;
 }
+@media (min-width: 1440px) {
+  .wrapper {
+    padding: 2vh 20vw;
+  }
+}
 
 ul {
   list-style: none;

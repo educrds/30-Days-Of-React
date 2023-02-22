@@ -21,6 +21,10 @@ html {
   overflow-x: hidden;
   margin: 0 auto;
   padding: 2vh 6vw;
+
+  @media (min-width: 1440px) {
+    padding: 2vh 20vw;
+  }
 }
 
 ul {
