@@ -7,13 +7,13 @@ import { getTransformStyle } from '../utils';
 
 const servicesList = [
   {
-    image: 'https://cdn-icons-png.flaticon.com/64/8633/8633633.png',
+    image: 'https://cdn-icons-png.flaticon.com/64/2621/2621260.png',
     title: 'UX/UI Designer',
     content:
       'Criação de wireframes e protótipos, além de colaborar na criação de interfaces de usuário.',
   },
   {
-    image: 'https://cdn-icons-png.flaticon.com/64/6071/6071490.png',
+    image: 'https://cdn-icons-png.flaticon.com/64/2621/2621189.png',
     title: 'Front-End',
     content:
       'Desenvolvimento de interfaces de usuário responsivas e atraentes para diversos dispositivos.    ',
