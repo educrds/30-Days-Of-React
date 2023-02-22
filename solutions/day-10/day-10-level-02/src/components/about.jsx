@@ -49,9 +49,7 @@ const Summary = () => (
 
 const Skills = () => (
   <Container className='skills'>
-    {skillsPercentage.map((all, i) => (
-      <ProgressBar key={i} {...all} />
-    ))}
+    {skillsPercentage.map((all, i) => <ProgressBar key={i} {...all} />)}
   </Container>
 );
 

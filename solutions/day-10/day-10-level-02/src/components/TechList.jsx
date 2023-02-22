@@ -1,16 +1,16 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SmallTitle, Title } from './TitleVariants';
-import { DiNodejsSmall, DiJavascript, DiMysql, DiGithubBadge, DiReact, DiCss3, DiHtml5, DiBootstrap } from 'react-icons/di';
+import { DiJavascript, DiMysql, DiGithubBadge, DiReact, DiSass, DiHtml5, DiBootstrap, DiCss3 } from 'react-icons/di';
 import Container from './Container';
 import { getTransformStyle } from '../utils';
 
 const techList = [
+  { techName: 'HTML', techIcon: <DiHtml5 /> },
   { techName: 'Javascript', techIcon: <DiJavascript /> },
   { techName: 'CSS', techIcon: <DiCss3 /> },
-  { techName: 'HTML', techIcon: <DiHtml5 /> },
+  { techName: 'Sass', techIcon: <DiSass /> },
   { techName: 'Bootstrap', techIcon: <DiBootstrap /> },
-  { techName: 'NodeJS', techIcon: <DiNodejsSmall /> },
   { techName: 'Github', techIcon: <DiGithubBadge /> },
   { techName: 'MySQL', techIcon: <DiMysql /> },
   { techName: 'React', techIcon: <DiReact /> },

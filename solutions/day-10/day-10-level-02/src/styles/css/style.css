@@ -138,8 +138,6 @@ a:hover {
   }
 }
 .container {
-  max-width: 1100px;
-  padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -233,7 +231,7 @@ a:hover {
 .about .summary {
   color: #333;
   display: flex;
-  flex: 3.75;
+  flex: 5;
   border-radius: 1.3rem;
   padding: 3vh 3vw;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
@@ -357,14 +355,14 @@ a:hover {
 .tech-list .CSS svg {
   color: #006cb4;
 }
+.tech-list .Sass svg {
+  color: #c66394;
+}
 .tech-list .HTML svg {
   color: #f75421;
 }
 .tech-list .Bootstrap svg {
   color: #5b397b;
-}
-.tech-list .NodeJS svg {
-  color: #6aa25a;
 }
 .tech-list .Github svg {
   color: #0d2534;
