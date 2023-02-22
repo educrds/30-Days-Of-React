@@ -22,7 +22,7 @@ const projects = [
   {
     title: 'Weather App',
     description:
-      'Aplicativo para visualizar indicadores do clima das cidades brasileiras, utilizando API Open Weather.',
+      'Aplicativo para visualizar indicadores do clima das cidades brasileiras, utilizando WeatherAPI.',
     icon: <FaSun />,
     techList: ['React', 'Styled-Components'],
     links: {
@@ -54,7 +54,7 @@ const projects = [
   {
     title: 'BeZoo',
     description:
-      'Projeto de uma landing page de um Zoológico feita para o projeto final do Bootcamp beAcademy.',
+      'Projeto de uma landing page de um Zoológico feita para o projeto final de um Bootcamp.',
     icon: <GiSnakeTongue />,
     techList: ['Bootstrap', 'JavaScript'],
     links: {

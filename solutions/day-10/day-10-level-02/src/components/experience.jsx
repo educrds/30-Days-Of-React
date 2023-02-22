@@ -22,7 +22,7 @@ const experienceList = [
   {
     period: 'Novembro - 2022',
     title: 'Orange Tech +',
-    resources: ['React', 'Typescript'],
+    resources: ['React', 'Typescript', 'HTML'],
     link: 'https://hermes.digitalinnovation.one/certificates/B1AC8419.pdf',
   },
   {
@@ -41,7 +41,7 @@ const experienceList = [
     period: 'Outubro - 2022',
     title: 'Google UX Design',
     resources: ['UI/UX designer', 'Interaction designer', 'Visual designer'],
-    link: '',
+    link: 'https://i.postimg.cc/D0wj45jM/Certificado-Profissionalde-UXDesigndo-Google.png',
   },
 ];
 
