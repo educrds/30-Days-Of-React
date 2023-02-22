@@ -10,15 +10,11 @@ import { getTransformStyle } from '../utils';
 const skillsPercentage = [
   {
     content: 'Front-End',
-    percentage: 85,
+    percentage: 65,
   },
   {
     content: 'UX/UI Design',
     percentage: 45,
-  },
-  {
-    content: 'Back-End',
-    percentage: 35,
   },
 ];
 
@@ -29,7 +25,7 @@ const About = () => {
   return (
     <>
       <motion.section id='about-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
-        <Title text='About me' />
+        <Title text='Sobre mim' />
         <Container className='about'>
           <Container>
             <Photo />
@@ -44,24 +40,19 @@ const About = () => {
   );
 };
 
-const Summary = () => {
-  return (
-    <Container>
-      <SmallTitle content='I am Bob Doe, web developer from Brazil, South America. I have rich experience in web site design and building and customization, also I am good at WordPress.' />
+const Summary = () => (
+  <Container>
+    <SmallTitle content='Desenvolvedor front-end React com experiência em criar interfaces de usuário responsivas e acessíveis e atualizado com as últimas tendências de design e desenvolvimento front-end.' />
+    <Button content='Baixar CV' />
+  </Container>
+);
 
-      <Button content='Download CV' />
-    </Container>
-  );
-};
-
-const Skills = () => {
-  return (
-    <Container className='skills'>
-      {skillsPercentage.map((all, i) => (
-        <ProgressBar key={i} {...all} />
-      ))}
-    </Container>
-  );
-};
+const Skills = () => (
+  <Container className='skills'>
+    {skillsPercentage.map((all, i) => (
+      <ProgressBar key={i} {...all} />
+    ))}
+  </Container>
+);
 
 export default About;

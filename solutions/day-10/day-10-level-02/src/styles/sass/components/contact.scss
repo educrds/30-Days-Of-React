@@ -34,6 +34,9 @@
     .form-row {
       gap: 2vw;
     }
+    textarea {
+      resize: vertical;
+    }
   }
 }
 .contact,

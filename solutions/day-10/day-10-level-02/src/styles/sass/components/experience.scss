@@ -8,10 +8,10 @@
 
   .square {
     @include square;
+    flex:1;
     display: flex;
     text-align: left;
     flex-direction: column;
-    // height: fit-content;
     row-gap: 10px;
     &:hover {
       transform: scale(1.05);
@@ -39,7 +39,7 @@
       > p {
         color: #808080;
       }
-      > a{
+      a {
         color: #333;
         text-decoration: none;
       }

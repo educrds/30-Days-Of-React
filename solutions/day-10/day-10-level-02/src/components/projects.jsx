@@ -75,61 +75,49 @@ const projects = [
   },
 ];
 
-const Item = () => {
-  return projects.map(({ icon, title, techList, description, links }, i) => {
-    return (
-      <Container key={i}>
-        <ProjectTitle icon={icon} title={title} />
-        <Technologies techList={techList} />
-        <ProjectDescription description={description} />
-        <ProjectLinks links={links} />
+const Item = () =>
+  projects.map(({ icon, title, techList, description, links }, i) => (
+    <Container key={i}>
+      <ProjectTitle icon={icon} title={title} />
+      <Technologies techList={techList} />
+      <ProjectDescription description={description} />
+      <ProjectLinks links={links} />
+    </Container>
+  ));
+
+const ProjectTitle = ({ title, icon }) => (
+  <Container className='title'>
+    {icon}
+    <Title text={title} />
+  </Container>
+);
+
+const Technologies = ({ techList }) => (
+  <Container className='technologies'>
+    {techList.map((tech, i) => (
+      <Container className={`item ${tech}`} key={i}>
+        <SmallTitle content={tech} />
       </Container>
-    );
-  });
-};
+    ))}
+  </Container>
+);
 
-const ProjectTitle = ({ title, icon }) => {
-  return (
-    <Container className='title'>
-      {icon}
-      <Title text={title} />
-    </Container>
-  );
-};
-const Technologies = ({ techList }) => {
-  return (
-    <Container className='technologies'>
-      {techList.map((tech, i) => {
-        return (
-          <Container className={`item ${tech}`} key={i}>
-            <SmallTitle content={tech} />
-          </Container>
-        );
-      })}
-    </Container>
-  );
-};
+const ProjectDescription = ({ description }) => (
+  <Container className='description'>
+    <SmallTitle content={description} />
+  </Container>
+);
 
-const ProjectDescription = ({ description }) => {
-  return (
-    <Container className='description'>
-      <SmallTitle content={description} />
-    </Container>
-  );
-};
-
-const ProjectLinks = ({ links }) => {
-  return (
-    <Container className='links'>
-      <a href={links.github} target='_blank'>
-        <FaGithub />
-      </a>
-      <a href={links.project} target='_blank'>
-        <FaLink />
-      </a>
-    </Container>
-  );
-};
+const ProjectLinks = ({ links }) => (
+  <Container className='links'>
+    <a href={links.github} target='_blank'>
+      <FaGithub />
+    </a>
+    <a href={links.project} target='_blank'>
+      <FaLink />
+    </a>
+  </Container>
+);
 
 export default function Projects() {
   const ref = useRef(null);
@@ -137,7 +125,7 @@ export default function Projects() {
 
   return (
     <motion.section id='projects-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
-      <Title text='Projects' />
+      <Title text='Projetos' />
       <Container className='projects'>
         <Item />
       </Container>

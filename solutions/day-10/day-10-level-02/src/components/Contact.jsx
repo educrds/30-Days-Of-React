@@ -15,12 +15,7 @@ const Contact = () => {
   const isInView = useInView(ref, { once: true });
 
   const [validateMessage, setValidateMessage] = useState(null);
-  const [email, setEmail] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const [email, setEmail] = useState({name: '', email: '', subject: '', message: '' });
 
   useEffect(() => {
     if (validateMessage && validateMessage.type === 'success') {
@@ -37,15 +32,13 @@ const Contact = () => {
 
     // Verifica se todos os campos foram preenchidos
     if (Object.values(email).some(value => value === '')) {
-      setValidateMessage({ type: 'error', content: 'Por favor, preencha todos os campos.' });
-      return;
+      return setValidateMessage({ type: 'error', content: 'Por favor, preencha todos os campos.' });
     }
 
     // Verifica se o formato do email está correto
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.email)) {
-      setValidateMessage({ type: 'error', content: 'Por favor, insira um email válido.' });
-      return;
+      return setValidateMessage({ type: 'error', content: 'Por favor, insira um email válido.' });
     }
 
     // Envia o email
@@ -65,7 +58,7 @@ const Contact = () => {
 
   return (
     <motion.section id='contact-section' ref={ref} style={getTransformStyle(isInView, '200px')}>
-      <Title text='Get In Touch' />
+      <Title text='Contato' />
       <Container className='contact'>
         <Header />
         <Container className='form'>
@@ -74,13 +67,13 @@ const Contact = () => {
             <Container className='form-row'>
               <Input
                 name='name'
-                placeholder='Your name'
+                placeholder='Nome'
                 onChange={handleChange}
                 value={email.name}
               />
               <Input
                 name='email'
-                placeholder='Email address'
+                placeholder='Email'
                 onChange={handleChange}
                 value={email.email}
               />
@@ -88,7 +81,7 @@ const Contact = () => {
             <Container>
               <Input
                 name='subject'
-                placeholder='Subject'
+                placeholder='Assunto'
                 onChange={handleChange}
                 value={email.subject}
               />
@@ -97,12 +90,12 @@ const Contact = () => {
               <textarea
                 rows='3'
                 name='message'
-                placeholder='Message'
+                placeholder='Mensagem'
                 onChange={handleChange}
                 value={email.message}
               ></textarea>
             </Container>
-            <Button content='Send message' />
+            <Button content='Enviar mensagem' />
           </form>
         </Container>
       </Container>
@@ -113,9 +106,9 @@ const Contact = () => {
 const Header = () => {
   return (
     <Container>
-      <h3>Let's talk about everything?</h3>
+      <h3>Let's talk?</h3>
       <p>
-        Don't like forms? Send me an <a href='mailto:eduardocardoso1039@gmail.com'>email</a>.
+        Não curte formulários? Envie-me um <a href='mailto:eduardocardoso1039@gmail.com'>email</a>.
       </p>
     </Container>
   );

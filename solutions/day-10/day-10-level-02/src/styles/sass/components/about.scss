@@ -30,9 +30,9 @@
     .skills {
       flex: 1;
     }
-  }
-  & ::after {
-    @include setupArrowChatBallon;
+    &::after {
+      @include setupArrowChatBallon;
+    }
   }
 }
 
@@ -43,9 +43,9 @@
     row-gap: 2vh;
     .summary {
       flex-direction: column;
-    }
-    & ::after {
-      border: none;
+      &::after {
+        border: none;
+      }
     }
   }
 }

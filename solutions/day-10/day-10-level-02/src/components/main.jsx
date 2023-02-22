@@ -11,35 +11,32 @@ const socialNetworks = [
   { link: 'https://www.linkedin.com/in/eduardocrds', icon: <FaLinkedin /> },
 ];
 
-const Main = () => {
-  return (
-    <section>
-      <motion.div
-        className='mainCard'
-        variants={mainCardVariants}
-        initial='initial'
-        animate='animate'
-        transition='transition'
-      >
-        <Container>
-          <Photo />
-          <Title text='Bob Doe' />
-          <SmallTitle content="I'm a Web Development" />
-          <SocialIcons />
-        </Container>
-      </motion.div>
-    </section>
-  );
-};
+// Componente da seção principal
+const Main = () => (
+  <section>
+    <motion.div
+      className='mainCard'
+      variants={mainCardVariants} // Variante de animação
+      initial='initial'
+      animate='animate'
+      transition='transition'
+    >
+      <Container>
+        <Photo />
+        <Title text='Eduardo Cardoso' />
+        <SmallTitle content="Front-End Developer" />
+        <SocialIcons />
+      </Container>
+    </motion.div>
+  </section>
+);
 
-const SocialIcons = () => {
-  return (
-    <ul>
-      {socialNetworks.map(({ link, icon }, i) => (
-        <List key={i} content={icon} href={link} target='_blank' />
-      ))}
-    </ul>
-  );
-};
-
+// Componente de ícones de redes sociais
+const SocialIcons = () => (
+  <ul>
+    {socialNetworks.map(({ link, icon }, i) => (
+      <List key={i} content={icon} href={link} target='_blank' />
+    ))}
+  </ul>
+);
 export default Main;

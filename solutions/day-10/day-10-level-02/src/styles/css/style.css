@@ -12,7 +12,6 @@ html {
 .wrapper {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  max-width: 1650px;
   margin: 0 auto;
   padding: 2vh 6vw;
 }
@@ -62,7 +61,6 @@ button:hover {
 }
 
 nav {
-  display: flex;
   align-items: center;
 }
 
@@ -139,56 +137,68 @@ a:hover {
     margin-bottom: 2vh;
   }
 }
-nav {
+.container {
+  max-width: 1100px;
+  padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-}
-nav .navbar-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-}
-nav .navbar-links .toggle-button {
-  cursor: pointer;
-  font-size: 1.35rem;
-}
-nav .navbar-toggle {
-  display: none;
+  height: 100%;
 }
 
+.navbar {
+  position: relative;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+}
+
+.navbar-toggle svg {
+  cursor: pointer;
+}
+
+.nav-elements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-elements ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
 @media (max-width: 630px) {
   .navbar-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
-  .navbar-links {
-    display: none;
-  }
-  .navbar-links.open {
     display: block;
+  }
+  .nav-elements {
     position: absolute;
-    top: 50px;
     right: 0;
-    background-color: var(--bg-color);
-    width: 100%;
-    padding: 10px;
+    top: 60px;
+    background-color: #fef7e5;
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: width 0.3s ease-in;
+    overflow: hidden;
     z-index: 1;
   }
-  .navbar-links.open ul {
-    list-style: none;
-    display: flex;
-    margin-left: auto;
-    gap: 3vw;
-    flex-direction: column;
-    align-items: center;
+  .theme-light .nav-elements {
+    background: #f9f9ff;
   }
-  .navbar-links a {
-    margin: 0;
+  .theme-dark .nav-elements {
+    background: #353838;
+  }
+  .nav-elements.active {
+    width: 100%;
+  }
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
   }
 }
 .mainCard {
@@ -201,7 +211,7 @@ nav .navbar-toggle {
   margin: 5vh 0;
 }
 .mainCard img {
-  width: 150px;
+  width: 130px;
   border-radius: 100%;
   filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 3px 8px);
 }
@@ -216,7 +226,7 @@ nav .navbar-toggle {
   flex: 1;
 }
 .about > div img {
-  width: 150px;
+  width: 130px;
   border-radius: 100%;
   filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 3px 8px);
 }
@@ -245,7 +255,7 @@ nav .navbar-toggle {
 .about .summary .skills {
   flex: 1;
 }
-.about ::after {
+.about .summary::after {
   border: 0.75em solid transparent;
   border-left: none;
   content: "";
@@ -253,10 +263,10 @@ nav .navbar-toggle {
   right: 100%;
   top: 50px;
 }
-.theme-light .about ::after {
+.theme-light .about .summary::after {
   border-right-color: #fff;
 }
-.theme-dark .about ::after {
+.theme-dark .about .summary::after {
   border-right-color: #fff;
 }
 
@@ -269,7 +279,7 @@ nav .navbar-toggle {
   .about .summary {
     flex-direction: column;
   }
-  .about ::after {
+  .about .summary::after {
     border: none;
   }
 }
@@ -527,6 +537,7 @@ nav .navbar-toggle {
   border-radius: 2rem;
   padding: 5vh 2.5vw;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  flex: 1;
 }
 .theme-light .services div {
   background-color: #fff;
@@ -553,6 +564,7 @@ nav .navbar-toggle {
   border-radius: 2rem;
   padding: 5vh 2.5vw;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  flex: 1;
   display: flex;
   text-align: left;
   flex-direction: column;
@@ -667,7 +679,7 @@ nav .navbar-toggle {
 .experience .column .infos > p {
   color: #808080;
 }
-.experience .column .infos > a {
+.experience .column .infos a {
   color: #333;
   text-decoration: none;
 }
@@ -726,6 +738,9 @@ nav .navbar-toggle {
 }
 .contact .form .form-row {
   gap: 2vw;
+}
+.contact .form textarea {
+  resize: vertical;
 }
 
 .contact,

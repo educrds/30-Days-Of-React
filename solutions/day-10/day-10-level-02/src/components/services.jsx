@@ -7,19 +7,16 @@ import { getTransformStyle } from '../utils';
 
 const servicesList = [
   {
-    image: 'https://cdn-icons-png.flaticon.com/64/3829/3829193.png',
+    image: 'https://cdn-icons-png.flaticon.com/64/8633/8633633.png',
     title: 'UX/UI Designer',
-    content: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget',
+    content:
+      'Criação de wireframes e protótipos, além de colaborar na criação de interfaces de usuário.',
   },
   {
-    image: 'https://cdn-icons-png.flaticon.com/64/3825/3825908.png',
+    image: 'https://cdn-icons-png.flaticon.com/64/6071/6071490.png',
     title: 'Front-End',
-    content: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-  },
-  {
-    image: 'https://cdn-icons-png.flaticon.com/64/2581/2581753.png',
-    title: 'Back-End',
-    content: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
+    content:
+      'Desenvolvimento de interfaces de usuário responsivas e atraentes para diversos dispositivos.    ',
   },
 ];
 
@@ -29,9 +26,9 @@ const Services = () => {
 
   return (
     <motion.section ref={ref} style={getTransformStyle(isInView, '200px')}>
-      <Title text='Services' />
+      <Title text='Serviços' />
       <Container className='services'>
-        {servicesList.map(service => <Square key={service.title} {...service} /> )}
+        {servicesList.map(service => <Square key={service.title} {...service} />)}
       </Container>
     </motion.section>
   );

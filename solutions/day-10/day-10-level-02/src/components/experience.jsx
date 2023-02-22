@@ -15,7 +15,7 @@ const experienceList = [
   },
   {
     period: 'Janeiro - 2023',
-    title: 'The Complete Node.js Developer Course',
+    title: 'Node.js Developer Course',
     resources: ['Node', 'MongoDB', 'SocketIO', 'Express', 'REST API'],
     link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-f1ce6acc-4bb5-4791-ad44-4877e578d5a1.jpg?v=1672840221000',
   },
@@ -27,13 +27,13 @@ const experienceList = [
   },
   {
     period: 'Outubro - 2022',
-    title: 'The Complete 2022 Web Development Bootcamp',
-    resources: ['Express', 'Bootstrap','MySQL', 'React', 'MongoDB', 'Node'],
+    title: 'Web Development Bootcamp',
+    resources: ['Express', 'Bootstrap', 'MySQL', 'React', 'MongoDB', 'Node'],
     link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-1ad50437-35ce-4b4d-b4ae-4de6a852764b.jpg?v=1666789196000',
   },
   {
     period: 'Outubro - 2022',
-    title: 'The Complete SQL Bootcamp 2022: Go from Zero to Hero',
+    title: 'SQL Bootcamp: Go from Zero to Hero',
     resources: ['MySQL', 'PostgreSQL'],
     link: 'https://udemy-certificate.s3.amazonaws.com/image/UC-2cf5b2c5-d13c-4fad-a3a2-2cb337b9e750.jpg?v=1664136644000',
   },
@@ -51,7 +51,7 @@ const Experience = () => {
 
   return (
     <motion.section id='experience-section' ref={ref} style={getTransformStyle(isInView, '-200px')}>
-      <Title text='Experience' />
+      <Title text='Experiência' />
       <Container className='experience'>
         <ExperienceList />
       </Container>
@@ -59,39 +59,35 @@ const Experience = () => {
   );
 };
 
-const ExperienceList = () => {
-  return (
-    <>
-      <div className='square'>
-        {experienceList.slice(0, 3).map((experience, i) => (
-          <ExpInfo key={i} {...experience} />
-        ))}
-      </div>
-      <div className='square'>
-        {experienceList.slice(-3).map((experience, i) => (
-          <ExpInfo key={i} {...experience} />
-        ))}
-      </div>
-    </>
-  );
-};
-
-const ExpInfo = ({ period, title, resources, link }) => {
-  return (
-    <div className='column'>
-      <div className='icon'>
-        <TbCertificate />
-        <div className='line'></div>
-      </div>
-      <div className='infos'>
-        <SmallTitle content={period} />
-        <a href={link} target='_blank'>
-          <Title text={title} />
-        </a>
-        <Technologies techList={resources} />
-      </div>
+const ExperienceList = () => (
+  <>
+    <div className='square'>
+      {experienceList.slice(0, 3).map((experience, i) => (
+        <ExpInfo key={i} {...experience} />
+      ))}
     </div>
-  );
-};
+    <div className='square'>
+      {experienceList.slice(-3).map((experience, i) => (
+        <ExpInfo key={i} {...experience} />
+      ))}
+    </div>
+  </>
+);
+
+const ExpInfo = ({ period, title, resources, link }) => (
+  <div className='column'>
+    <div className='icon'>
+      <TbCertificate />
+      <div className='line'></div>
+    </div>
+    <div className='infos'>
+      <SmallTitle content={period} />
+      <a href={link} target='_blank'>
+        <Title text={title} />
+      </a>
+      <Technologies techList={resources} />
+    </div>
+  </div>
+);
 
 export default Experience;
